@@ -34,7 +34,7 @@ export default function Footer() {
           {/* Logo */}
           <Link to="/" className="group inline-flex items-center gap-2.5 mb-5">
             <img
-  src="/gallery/logo.png"
+  src="/gallery/logo.webp"
   alt="9Ex Tattoo Studio"
   className="h-10 w-10 object-contain shrink-0 transition-transform duration-500 group-hover:rotate-6"/>
 

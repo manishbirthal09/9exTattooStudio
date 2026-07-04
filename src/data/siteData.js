@@ -10,7 +10,7 @@ export const studio = {
   name: '9Ex Tattoo Studio',
   founder: 'Shashikant Shelar',
   founderTitle: 'Founder & CEO, 9Ex Tattoo Studio',
-  founderImage: '/gallery/founder.jpg',
+  founderImage: '/gallery/founder.webp',
   tagline: "India's First Destiny Tattoo Consultant",
   phone: '+91 7666678188',
   whatsapp: '917666678188', // digits only, used for wa.me links
@@ -27,21 +27,21 @@ export const beforeAfter = [
     
     title: 'color-tattoo  ',
     
-    image: '/gallery/1st.png',
+    image: '/gallery/1st.webp',
   },
   {
     id: '2',
     
     title: 'color-tattoo  ',
     
-    image: '/gallery/2nd.png',
+    image: '/gallery/2nd.webp',
   },
   {
     id: '3',
     
     title: 'color-tattoo  ',
     
-    image: '/gallery/3rd.png',
+    image: '/gallery/3rd.webp',
   },
 ]
 export const navigation = [
@@ -63,7 +63,7 @@ export const galleryItems = [
     categoryLabel: 'color-tattoo Tattoos',
     title: 'color-tattoo  ',
     
-    image: '/gallery/color-tattoo-1.png',
+    image: '/gallery/color-tattoo-1.webp',
   },
   {
     id: 'work-2',
@@ -71,7 +71,7 @@ export const galleryItems = [
     categoryLabel: 'color-tattoo Tattoos',
     title: 'color-tattoo  ',
     
-    image: '/gallery/color-tattoo-2.png',
+    image: '/gallery/color-tattoo-2.webp',
   },
   {
     id: 'work-3',
@@ -79,7 +79,7 @@ export const galleryItems = [
     categoryLabel: 'color-tattoo Tattoos',
     title: 'color-tattoo  ',
     
-    image: '/gallery/color-tattoo-3.png',
+    image: '/gallery/color-tattoo-3.webp',
   },
   {
     id: 'work-4',
@@ -87,7 +87,7 @@ export const galleryItems = [
     categoryLabel: 'color-tattoo Tattoos',
     title: 'color-tattoo  ',
     
-    image: '/gallery/color-tattoo-4.png',
+    image: '/gallery/color-tattoo-4.webp',
   },
   {
     id: 'work-5',
@@ -95,7 +95,7 @@ export const galleryItems = [
     categoryLabel: 'color-tattoo Tattoos',
     title: 'color-tattoo  ',
     
-    image: '/gallery/color-tattoo-5.png',
+    image: '/gallery/color-tattoo-5.webp',
   },
   {
     id: 'work-6',
@@ -103,7 +103,7 @@ export const galleryItems = [
     categoryLabel: 'color-tattoo Tattoos',
     title: 'color-tattoo  ',
     
-    image: '/gallery/color-tattoo-6.png',
+    image: '/gallery/color-tattoo-6.webp',
   },
   {
     id: 'work-7',
@@ -111,7 +111,7 @@ export const galleryItems = [
     categoryLabel: 'color-tattoo Tattoos',
     title: 'color-tattoo  ',
     
-    image: '/gallery/color-tattoo-7.png',
+    image: '/gallery/color-tattoo-7.webp',
   },
   {
     id: 'work-8',
@@ -119,7 +119,7 @@ export const galleryItems = [
     categoryLabel: 'color-tattoo Tattoos',
     title: 'color-tattoo  ',
     
-    image: '/gallery/color-tattoo-8.png',
+    image: '/gallery/color-tattoo-8.webp',
   },
   {
     id: 'work-9',
@@ -127,7 +127,7 @@ export const galleryItems = [
     categoryLabel: 'color-tattoo Tattoos',
     title: 'color-tattoo  ',
     
-    image: '/gallery/color-tattoo-9.png',
+    image: '/gallery/color-tattoo-9.webp',
   },
   {
     id: 'work-10',
@@ -135,7 +135,7 @@ export const galleryItems = [
     categoryLabel: 'color-tattoo Tattoos',
     title: 'color-tattoo  ',
     
-    image: '/gallery/color-tattoo-10.png',
+    image: '/gallery/color-tattoo-10.webp',
   },
   {
     id: 'work-11',
@@ -143,7 +143,7 @@ export const galleryItems = [
     categoryLabel: 'Coverup Tattoos',
     title: 'coverup-tattoo ',
     
-    image: '/gallery/Coverup-tattoo-1.png',
+    image: '/gallery/Coverup-tattoo-1.webp',
   },
 {
     id: 'work-12',
@@ -151,7 +151,7 @@ export const galleryItems = [
     categoryLabel: 'Coverup Tattoos',
     title: 'coverup-tattoo ',
     
-    image: '/gallery/Coverup-tattoo-2.jpg',
+    image: '/gallery/Coverup-tattoo-2.webp',
   },
   {
     id: 'work-13',
@@ -159,7 +159,7 @@ export const galleryItems = [
     categoryLabel: 'Coverup Tattoos',
     title: 'coverup-tattoo ',
     
-    image: '/gallery/Coverup-tattoo-3.png',
+    image: '/gallery/Coverup-tattoo-3.webp',
   },
   {
     id: 'work-14',
@@ -167,7 +167,7 @@ export const galleryItems = [
     categoryLabel: 'Coverup Tattoos',
     title: 'coverup-tattoo ',
     
-    image: '/gallery/Coverup-tattoo-4.png',
+    image: '/gallery/Coverup-tattoo-4.webp',
   },
   {
     id: 'work-15',
@@ -175,7 +175,7 @@ export const galleryItems = [
     categoryLabel: 'Full Sleeve Tattoos',
     title: 'Full Sleeve Tattoos ',
     
-    image: '/gallery/full-sleeve-1.jpg',
+    image: '/gallery/full-sleeve-1.webp',
   },
   {
     id: 'work-16',
@@ -183,7 +183,7 @@ export const galleryItems = [
     categoryLabel: 'Full Sleeve Tattoos',
     title: 'Full Sleeve Tattoos ',
     
-    image: '/gallery/full-sleeve-2.jpg',
+    image: '/gallery/full-sleeve-2.webp',
   },
   {
     id: 'work-17',
@@ -191,7 +191,7 @@ export const galleryItems = [
     categoryLabel: 'Full Sleeve Tattoos',
     title: 'Full Sleeve Tattoos ',
     
-    image: '/gallery/full-sleeve-3.jpg',
+    image: '/gallery/full-sleeve-3.webp',
   },
 
   {
@@ -200,7 +200,7 @@ export const galleryItems = [
     categoryLabel: 'Hyper Realistic Tattoos',
     title: 'Hyper Realistic Tattoos ',
     
-    image: '/gallery/hyper-realistic-1.png',
+    image: '/gallery/hyper-realistic-1.webp',
   },
   {
     id: 'work-19',
@@ -208,7 +208,7 @@ export const galleryItems = [
     categoryLabel: 'Hyper Realistic Tattoos',
     title: 'Hyper Realistic Tattoos ',
     
-    image: '/gallery/hyper-realistic-2.png',
+    image: '/gallery/hyper-realistic-2.webp',
   },
   {
     id: 'work-20',
@@ -216,7 +216,7 @@ export const galleryItems = [
     categoryLabel: 'Hyper Realistic Tattoos',
     title: 'Hyper Realistic Tattoos ',
     
-    image: '/gallery/hyper-realistic-3.png',
+    image: '/gallery/hyper-realistic-3.webp',
   },
   {
     id: 'work-21',
@@ -224,7 +224,7 @@ export const galleryItems = [
     categoryLabel: 'Hyper Realistic Tattoos',
     title: 'Hyper Realistic Tattoos ',
     
-    image: '/gallery/hyper-realistic-4.png',
+    image: '/gallery/hyper-realistic-4.webp',
   },
   {
     id: 'work-22',
@@ -232,7 +232,7 @@ export const galleryItems = [
     categoryLabel: 'Hyper Realistic Tattoos',
     title: 'Hyper Realistic Tattoos ',
     
-    image: '/gallery/hyper-realistic-5.png',
+    image: '/gallery/hyper-realistic-5.webp',
   },
   {
     id: 'work-23',
@@ -240,7 +240,7 @@ export const galleryItems = [
     categoryLabel: 'Hyper Realistic Tattoos',
     title: 'Hyper Realistic Tattoos ',
     
-    image: '/gallery/hyper-realistic-6.png',
+    image: '/gallery/hyper-realistic-6.webp',
   },
 
   {
@@ -249,7 +249,7 @@ export const galleryItems = [
     categoryLabel: 'Line Art Tattoos',
     title: 'Line Art Tattoos ',
     
-    image: '/gallery/line-art-1.png',
+    image: '/gallery/line-art-1.webp',
   },
 
   {
@@ -258,7 +258,7 @@ export const galleryItems = [
     categoryLabel: 'Line Art Tattoos',
     title: 'Line Art Tattoos ',
     
-    image: '/gallery/line-art-2.png',
+    image: '/gallery/line-art-2.webp',
   },
   {
     id: 'work-26',
@@ -266,7 +266,7 @@ export const galleryItems = [
     categoryLabel: 'Line Art Tattoos',
     title: 'Line Art Tattoos ',
     
-    image: '/gallery/line-art-3.png',
+    image: '/gallery/line-art-3.webp',
   },
 
   {
@@ -275,7 +275,7 @@ export const galleryItems = [
     categoryLabel: 'Portrait Tattoos',
     title: 'Portrait Tattoos ',
     
-    image: '/gallery/portrait-1.png',
+    image: '/gallery/portrait-1.webp',
   },
   {
     id: 'work-28',
@@ -283,7 +283,7 @@ export const galleryItems = [
     categoryLabel: 'Portrait Tattoos',
     title: 'Portrait Tattoos ',
     
-    image: '/gallery/portrait-2.jpg',
+    image: '/gallery/portrait-2.webp',
   },
   {
     id: 'work-29',
@@ -291,7 +291,7 @@ export const galleryItems = [
     categoryLabel: 'Portrait Tattoos',
     title: 'Portrait Tattoos ',
     
-    image: '/gallery/portrait-3.png',
+    image: '/gallery/portrait-3.webp',
   },
   {
     id: 'work-30',
@@ -299,7 +299,7 @@ export const galleryItems = [
     categoryLabel: 'Portrait Tattoos',
     title: 'Portrait Tattoos ',
     
-    image: '/gallery/portrait-4.png',
+    image: '/gallery/portrait-4.webp',
   },
   {
     id: 'work-31',
@@ -307,7 +307,7 @@ export const galleryItems = [
     categoryLabel: 'Portrait Tattoos',
     title: 'Portrait Tattoos ',
     
-    image: '/gallery/portrait-5.png',
+    image: '/gallery/portrait-5.webp',
   },
   {
     id: 'work-32',
@@ -315,7 +315,7 @@ export const galleryItems = [
     categoryLabel: 'Portrait Tattoos',
     title: 'Portrait Tattoos ',
     
-    image: '/gallery/portrait-6.png',
+    image: '/gallery/portrait-6.webp',
   },
   {
     id: 'work-33',
@@ -323,7 +323,7 @@ export const galleryItems = [
     categoryLabel: 'Portrait Tattoos',
     title: 'Portrait Tattoos ',
     
-    image: '/gallery/portrait-7.png',
+    image: '/gallery/portrait-7.webp',
   },
   {
     id: 'work-34',
@@ -331,7 +331,7 @@ export const galleryItems = [
     categoryLabel: 'Portrait Tattoos',
     title: 'Portrait Tattoos ',
     
-    image: '/gallery/portrait-8.png',
+    image: '/gallery/portrait-8.webp',
   },
   {
     id: 'work-35',
@@ -339,7 +339,7 @@ export const galleryItems = [
     categoryLabel: 'Portrait Tattoos',
     title: 'Portrait Tattoos ',
     
-    image: '/gallery/portrait-9.jpg',
+    image: '/gallery/portrait-9.webp',
   },
   {
     id: 'work-36',
@@ -347,7 +347,7 @@ export const galleryItems = [
     categoryLabel: 'Portrait Tattoos',
     title: 'Portrait Tattoos ',
     
-    image: '/gallery/portrait-10.jpg',
+    image: '/gallery/portrait-10.webp',
   },
   {
     id: 'work-37',
@@ -355,7 +355,7 @@ export const galleryItems = [
     categoryLabel: 'Portrait Tattoos',
     title: 'Portrait Tattoos ',
     
-    image: '/gallery/portrait-11.jpg',
+    image: '/gallery/portrait-11.webp',
   },
   {
     id: 'work-38',
@@ -363,7 +363,7 @@ export const galleryItems = [
     categoryLabel: 'Portrait Tattoos',
     title: 'Portrait Tattoos ',
     
-    image: '/gallery/portrait-12.jpg',
+    image: '/gallery/portrait-12.webp',
   },
   {
     id: 'work-39',
@@ -371,7 +371,7 @@ export const galleryItems = [
     categoryLabel: 'Realistic Tattoos',
     title: 'Realistic Tattoos ',
     
-    image: '/gallery/realistic-1.png',
+    image: '/gallery/realistic-1.webp',
   },
   {
     id: 'work-40',
@@ -379,7 +379,7 @@ export const galleryItems = [
     categoryLabel: 'Realistic Tattoos',
     title: 'Realistic Tattoos ',
     
-    image: '/gallery/realistic-2.png',
+    image: '/gallery/realistic-2.webp',
   },
   {
     id: 'work-41',
@@ -387,7 +387,7 @@ export const galleryItems = [
     categoryLabel: 'Realistic Tattoos',
     title: 'Realistic Tattoos ',
     
-    image: '/gallery/realistic-3.png',
+    image: '/gallery/realistic-3.webp',
   },
   {
     id: 'work-42',
@@ -395,7 +395,7 @@ export const galleryItems = [
     categoryLabel: 'Realistic Tattoos',
     title: 'Realistic Tattoos ',
     
-    image: '/gallery/realistic-4.png',
+    image: '/gallery/realistic-4.webp',
   },
   {
     id: 'work-43',
@@ -403,7 +403,7 @@ export const galleryItems = [
     categoryLabel: 'Realistic Tattoos',
     title: 'Realistic Tattoos ',
     
-    image: '/gallery/realistic-5.png',
+    image: '/gallery/realistic-5.webp',
   },
   {
     id: 'work-44',
@@ -411,7 +411,7 @@ export const galleryItems = [
     categoryLabel: 'Realistic Tattoos',
     title: 'Realistic Tattoos ',
     
-    image: '/gallery/realistic-6.png',
+    image: '/gallery/realistic-6.webp',
   },
   {
     id: 'work-45',
@@ -419,7 +419,7 @@ export const galleryItems = [
     categoryLabel: 'Realistic Tattoos',
     title: 'Realistic Tattoos ',
     
-    image: '/gallery/realistic-7.png',
+    image: '/gallery/realistic-7.webp',
   },
   {
     id: 'work-46',
@@ -427,7 +427,7 @@ export const galleryItems = [
     categoryLabel: 'Realistic Tattoos',
     title: 'Realistic Tattoos ',
     
-    image: '/gallery/realistic-8.png',
+    image: '/gallery/realistic-8.webp',
   },
   {
     id: 'work-47',
@@ -435,7 +435,7 @@ export const galleryItems = [
     categoryLabel: 'Realistic Tattoos',
     title: 'Realistic Tattoos ',
     
-    image: '/gallery/realistic-9.png',
+    image: '/gallery/realistic-9.webp',
   },
  
 
@@ -494,7 +494,7 @@ export const newsFeatures = [
   // {
   //   outlet: 'Mid-Day',
   //   headline: "Mumbai's first Destiny Tattoo consultant",
-  //   image: '/images/news-midday.jpg',
+  //   image: '/images/news-midday.webp',
   //   link: 'https://www.mid-day.com',
   // },
   {
@@ -709,28 +709,28 @@ export const team = [
       'Tattoo Consultation & Design Strategy',
     ],
     bio: '',
-    image: '/images/team/shashikant-shelar.jpg',
+    image: '/images/team/shashikant-shelar.webp',
   },
   {
     name: 'Name not provided', // name missing — add when available
     role: 'Artist / PMU Specialist',
     specialization: ['Scar Camouflage', 'Stretch Mark Camouflage', 'Permanent Makeup', 'Color Correction'],
     bio: '',
-    image: '/images/team/pmu-specialist.jpg',
+    image: '/images/team/pmu-specialist.webp',
   },
   {
     name: 'Tejas Shelar',
     role: 'Tattoo Artist',
     specialization: ['Black & Grey Tattoos', 'Fine Line Tattoos', 'Geometric Tattoos'],
     bio: '',
-    image: '/images/team/tejas-shelar.jpg',
+    image: '/images/team/tejas-shelar.webp',
   },
   {
     name: 'Harsh Makhwana',
     role: 'Tattoo Artist',
     specialization: ['Color Tattoo', 'Custom Tattoo', 'Black & Grey Tattoos', 'Fine Line Tattoos', 'Geometric Tattoos'],
     bio: '',
-    image: '/images/team/harsh-makhwana.jpg',
+    image: '/images/team/harsh-makhwana.webp',
   },
 ];
 

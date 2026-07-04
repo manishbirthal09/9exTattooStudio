@@ -32,7 +32,7 @@ export default function Navbar() {
         >
           {/* Destiny wheel icon */}
           <img
-  src="/gallery/logo.png"
+  src="/gallery/logo.webp"
   alt="9Ex Tattoo Studio"
   className="h-10 w-10 object-contain shrink-0 transition-transform duration-500 group-hover:rotate-6"/>
 
