@@ -15,6 +15,7 @@ export default function ExitIntentPopup() {
       if (e.clientY <= 0) {
         setVisible(true);
         sessionStorage.setItem(SESSION_KEY, '1');
+        document.removeEventListener('mouseleave', handleMouseLeave);
       }
     }
 

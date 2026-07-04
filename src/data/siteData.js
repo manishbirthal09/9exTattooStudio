@@ -738,19 +738,19 @@ export const testimonialsvideo = [
   {
     name: 'Aarti Deshmukh',
     location: 'Thane',
-    video: '/gallery/testimonial-1.mp4',
+    video: 'https://res.cloudinary.com/dkhnzzic6/video/upload/v1783174865/lv_0_20240512134418_uyvs79.mp4',
      // optional thumbnail
   },
   {
     name: 'Aarti Deshmukh',
     location: 'Thane',
-    video: '/gallery/testimonial-2.mp4',
+    video: 'https://res.cloudinary.com/dkhnzzic6/video/upload/v1783187035/lv_0_20251115140736_vohp5w.mp4',
     
   },
   {
     name: 'Aarti Deshmukh',
     location: 'Thane',
-    video: '/gallery/testimonial-3.mp4',
+    video: 'https://res.cloudinary.com/dkhnzzic6/video/upload/v1783196343/VID_20231021_234345254_1_qpt59w.mp4',
     
   },
   // ...baaki testimonials

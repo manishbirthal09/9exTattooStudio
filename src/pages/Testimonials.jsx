@@ -45,7 +45,7 @@ function TestimonialVideo({ t }) {
 
   return (
     <div>
-      <div className="relative aspect-video overflow-hidden bg-ink-soft cursor-pointer" onClick={togglePlay}>
+      <div className="relative aspect-9/16 overflow-hidden bg-ink-soft cursor-pointer" onClick={togglePlay}>
         <video
           ref={videoRef}
           src={t.video}
