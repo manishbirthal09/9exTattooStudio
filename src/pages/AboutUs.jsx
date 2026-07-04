@@ -2,14 +2,14 @@ import React from 'react';
 import SectionEyebrow from '../components/SectionEyebrow.jsx';
 import ImagePlaceholder from '../components/ImagePlaceholder.jsx';
 import Button from '../components/Button.jsx';
-import { studio, studioLocations, milestones } from '../data/siteData.js';
+import { studio, studioLocations, milestones,team } from '../data/siteData.js';
 
-const team = [
-  { name: 'Shashikant Shelar', role: 'Founder & Lead Artist' },
-  { name: 'Studio Artist', role: 'Realistic & Portrait Work' },
-  { name: 'Studio Artist', role: 'Mandala & Fine Line' },
-  { name: 'Consultant', role: 'Destiny Report & Numerology' },
-];
+// const team = [
+//   { name: 'Shashikant Shelar', role: 'Founder & Lead Artist' },
+//   { name: 'Studio Artist', role: 'Realistic & Portrait Work' },
+//   { name: 'Studio Artist', role: 'Mandala & Fine Line' },
+//   { name: 'Consultant', role: 'Destiny Report & Numerology' },
+// ];
 
 export default function AboutUs() {
   return (
@@ -39,8 +39,8 @@ export default function AboutUs() {
       {/* Founder */}
       <section className="border-y border-paper-line/10 bg-paper text-ink">
         <div className="container-site grid gap-12 py-20 md:grid-cols-2 md:items-center">
-          <ImagePlaceholder label="Founder Portrait — Shashikant Shelar" tone="paper" ratio="aspect-[3/4]" />
-          <div>
+          <img src={studio.founderImage} alt={studio.founder} className="aspect-[8/9] object-cover" />
+           <div>
             <SectionEyebrow index="01">
               <span className="text-blood">Founder</span>
             </SectionEyebrow>
@@ -94,7 +94,43 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Team */}
+
+
+{/* Team */}
+<section className="container-site py-20">
+  <SectionEyebrow index="05">Team</SectionEyebrow>
+  <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    {team.map((member) => (
+      <div key={member.name + member.role}>
+        {/* <div className="aspect-square overflow-hidden bg-ink-soft">
+           <img
+            src={member.image}
+            alt={member.name || member.role}
+            loading="lazy"
+            className="h-full w-full object-cover"
+          /> 
+        </div> */}
+        {member.name && <p className="mt-3 font-display text-lg">{member.name}</p>}
+        <p className="text-xs text-muted">{member.role}</p>
+
+        {member.specialization?.length > 0 && (
+          <ul className="mt-3 space-y-1">
+            {member.specialization.map((s) => (
+              <li key={s} className="text-xs text-paper/60">
+                • {s}
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {member.bio && (
+          <p className="mt-3 text-sm text-paper/70 leading-relaxed">{member.bio}</p>
+        )}
+      </div>
+    ))}
+  </div>
+</section>
+      {/* Team
       <section className="container-site py-20">
         <SectionEyebrow index="05">Team</SectionEyebrow>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -106,7 +142,7 @@ export default function AboutUs() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

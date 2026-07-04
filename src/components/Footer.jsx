@@ -33,22 +33,11 @@ export default function Footer() {
         <div>
           {/* Logo */}
           <Link to="/" className="group inline-flex items-center gap-2.5 mb-5">
-            <svg width="24" height="24" viewBox="0 0 28 28" className="transition-transform duration-700 group-hover:rotate-45 shrink-0">
-              <circle cx="14" cy="14" r="12" fill="none" stroke="#C9A84C" strokeWidth="0.8" opacity="0.5" />
-              <circle cx="14" cy="14" r="7"  fill="none" stroke="#C9A84C" strokeWidth="0.6" opacity="0.35" />
-              {[0,1,2,3,4,5,6,7,8,9,10,11].map(i => {
-                const a = (i / 12) * Math.PI * 2;
-                return (
-                  <line
-                    key={i}
-                    x1={14 + Math.cos(a) * 7}  y1={14 + Math.sin(a) * 7}
-                    x2={14 + Math.cos(a) * 12} y2={14 + Math.sin(a) * 12}
-                    stroke="#C9A84C" strokeWidth="0.7" opacity="0.45"
-                  />
-                );
-              })}
-              <circle cx="14" cy="14" r="1.5" fill="#DFC070" />
-            </svg>
+            <img
+  src="/gallery/logo.png"
+  alt="9Ex Tattoo Studio"
+  className="h-10 w-10 object-contain shrink-0 transition-transform duration-500 group-hover:rotate-6"/>
+
             <div className="flex flex-col leading-none">
               <span className="font-display text-lg">
                 9Ex <span className="text-brass-bright">Tattoo</span>

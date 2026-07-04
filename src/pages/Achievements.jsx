@@ -3,7 +3,7 @@ import { Award } from 'lucide-react';
 import SectionEyebrow from '../components/SectionEyebrow.jsx';
 import ImagePlaceholder from '../components/ImagePlaceholder.jsx';
 import { achievements, newsFeatures, milestones } from '../data/siteData.js';
-
+import Button from '../components/Button.jsx';
 const certifications = [
   'Certified Tattoo Hygiene & Sterilisation Practices',
   'Bloodborne Pathogens Safety Certification',
@@ -51,7 +51,74 @@ export default function Achievements() {
       </section>
 
       {/* Media coverage */}
-      <section className="container-site py-20">
+      <section className="container-site py-24">
+        <SectionEyebrow index="03">As Featured In</SectionEyebrow>
+      
+        <div className="mt-10 flex flex-wrap justify-center gap-6  ">
+          {newsFeatures.map((n) => (
+            <a
+              key={n.outlet}
+              href={n.link}
+              target="_blank"
+              rel="noreferrer"
+              className="group block w-[300px] gap-3 p-6 bg-ink hover:bg-ink-soft transition-colors duration-150 no-underline"
+            >
+              {/* Outlet badge + arrow */}
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] mb-3 font-medium tracking-widest uppercase text-paper/50 bg-ink-soft px-3 py-1 rounded-full border border-paper-line/10">
+                  {n.outlet}
+                </span>
+                <div className="w-7 h-7 mb-3 rounded-full border border-paper-line/20 group-hover:border-brass/60 flex items-center justify-center transition-colors duration-150">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="text-paper/40 group-hover:text-brass transition-colors"/>
+                  </svg>
+                </div>
+              </div>
+      
+              {/* Image */}
+              <div className="w-full mb-3 aspect-video rounded-md overflow-hidden bg-ink-soft">
+                {n.image ? (
+                  <img
+                    src={n.image}
+                    alt={n.outlet}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="h-full w-full flex items-center justify-center text-paper/20">
+                    {/* placeholder icon */}
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+                      <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+                    </svg>
+                  </div>
+                )}
+              </div>
+      
+              {/* Headline */}
+              <p className="text-sm font-medium text-paper/80 leading-relaxed group-hover:text-paper transition-colors flex-1">
+                {n.headline}
+              </p>
+      
+              {/* Meta */}
+              {/* <div className="flex items-center gap-2 text-[11px] text-paper/40">
+                <span>{n.date}</span>
+                {/* <span className="w-1 h-1 rounded-full bg-paper/30 inline-block"/> 
+                {/* <span>Press Feature</span> 
+              </div> */}
+      
+              {/* CTA */}
+              <div className="flex items-center gap-1.5 text-[11px] font-medium text-paper/40 group-hover:text-brass/80 transition-colors pt-3 border-t border-paper-line/10">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                </svg>
+                Read full article
+              </div>
+            </a>
+          ))}
+        </div>
+      
+        
+      </section>
+      {/* <section className="container-site py-20">
         <SectionEyebrow index="02">News Features &amp; Media Coverage</SectionEyebrow>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {newsFeatures.map((n) => (
@@ -62,7 +129,7 @@ export default function Achievements() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Certifications */}
       <section className="border-y border-paper-line/10 bg-paper text-ink">

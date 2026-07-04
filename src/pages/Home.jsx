@@ -254,7 +254,42 @@ export default function Home() {
         </div>
       </section> */}
 
-      {/* ── Featured Work ──────────────────────────────────── */}
+
+
+
+{/* ── Featured Work ──────────────────────────────────── */}
+<section className="container-site py-20">
+  <div className="flex items-end justify-between gap-6">
+    <div>
+      <SectionEyebrow index="01">Featured Work</SectionEyebrow>
+      <h2 className="mt-4 font-display text-3xl md:text-4xl">A small sample of recent pieces</h2>
+    </div>
+    <Button to="/gallery" variant="ghost" className="hidden sm:inline-flex">
+      View Full Gallery →
+    </Button>
+  </div>
+
+  <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
+    {featuredWork.map((item) => (
+      <div key={item.id} className="group overflow-hidden">
+        <div className="aspect-square overflow-hidden bg-ink-soft">
+          <img
+            src={item.image}
+            alt={item.title}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+        <p className="mt-2 text-xs text-paper/60">{item.title}</p>
+      </div>
+    ))}
+  </div>
+
+  <Button to="/gallery" variant="outline" className="mt-8 sm:hidden">
+    View Full Gallery
+  </Button>
+</section>
+      {/* ── Featured Work ────────────────────────────────────
       <section className="container-site py-20">
         <div className="flex items-end justify-between gap-6">
           <div>
@@ -275,12 +310,12 @@ export default function Home() {
         <Button to="/gallery" variant="outline" className="mt-8 sm:hidden">
           View Full Gallery
         </Button>
-      </section>
+      </section> */}
 
       {/* ── Founder ────────────────────────────────────────── */}
       <section className="border-y border-ink/15 bg-paper text-ink">
         <div className="container-site grid gap-12 py-24 md:grid-cols-2 md:items-center">
-          <ImagePlaceholder label="Founder Portrait — Shashikant Shelar" tone="paper" ratio="aspect-[2/3]" />
+          <img src={studio.founderImage} alt={studio.founder} className="aspect-[8/9] object-cover" />
           <div>
             <SectionEyebrow index="02">
               <span className="text-blood">Founder</span>
@@ -901,8 +936,8 @@ export default function Home() {
     </div>
 
     {/* Map placeholder — styled */}
-    <div className="mt-8 relative w-full aspect-[21/9] border border-ink/10 bg-ink/[0.03] overflow-hidden group">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.1161330019927!2d72.96864227466794!3d19.19012934838076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b87ae16907e9%3A0xff9da0d9943ea712!2s9Ex%20Tattoo%20Shop%20%7C%20Premium%20%7C%20Story%20Based%20Art%20%7C%20Thane%20%7C%20Mumbai!5e0!3m2!1sen!2sin!4v1782308720058!5m2!1sen!2sin" width="100%" height="420" style={{border:0}} allowFullScreen="" loading="lazy" referrerPolicy="strict-origin-when-cross-origin"></iframe>
+    <div className="mt-8 relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] border border-ink/10 bg-ink/[0.03] overflow-hidden group">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.1161330019927!2d72.96864227466794!3d19.19012934838076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b87ae16907e9%3A0xff9da0d9943ea712!2s9Ex%20Tattoo%20Shop%20%7C%20Premium%20%7C%20Story%20Based%20Art%20%7C%20Thane%20%7C%20Mumbai!5e0!3m2!1sen!2sin!4v1782308720058!5m2!1sen!2sin"  className="absolute inset-0 h-full w-full" style={{border:0}} allowFullScreen="" loading="lazy" referrerPolicy="strict-origin-when-cross-origin"></iframe>
      
       {/* Grid pattern background */}
       {/* <div
@@ -925,12 +960,12 @@ export default function Home() {
       </div> */}
 
       {/* Label */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+      {/* <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
 
          {/* <span className="font-data text-[10px] tracking-widest2 uppercase text-ink/30 bg-white/80 px-3 py-1.5">
           Google Maps · Coming Soon
-        </span> */}
-      </div>
+        </span> 
+      </div> */}
     </div>
 
   </div>

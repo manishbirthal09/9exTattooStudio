@@ -10,6 +10,7 @@ export const studio = {
   name: '9Ex Tattoo Studio',
   founder: 'Shashikant Shelar',
   founderTitle: 'Founder & CEO, 9Ex Tattoo Studio',
+  founderImage: '/gallery/founder.jpg',
   tagline: "India's First Destiny Tattoo Consultant",
   phone: '+91 7666678188',
   whatsapp: '917666678188', // digits only, used for wa.me links
@@ -20,6 +21,29 @@ export const studio = {
   
 };
 
+export const beforeAfter = [
+  {
+    id: '1',
+    
+    title: 'color-tattoo  ',
+    
+    image: '/gallery/1st.png',
+  },
+  {
+    id: '2',
+    
+    title: 'color-tattoo  ',
+    
+    image: '/gallery/2nd.png',
+  },
+  {
+    id: '3',
+    
+    title: 'color-tattoo  ',
+    
+    image: '/gallery/3rd.png',
+  },
+]
 export const navigation = [
   { label: 'Home', path: '/' },
   { label: 'Gallery', path: '/gallery' },
@@ -27,7 +51,7 @@ export const navigation = [
   { label: 'About Us', path: '/about' },
   { label: 'Achievements', path: '/achievements' },
   { label: 'Testimonials', path: '/testimonials' },
-  { label: 'Blog', path: '/blog' },
+  // { label: 'Blog', path: '/blog' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -114,7 +138,7 @@ export const galleryItems = [
     image: '/gallery/color-tattoo-10.png',
   },
   {
-    id: 'work-1',
+    id: 'work-11',
     category: 'coverup-tattoo',
     categoryLabel: 'Coverup Tattoos',
     title: 'coverup-tattoo ',
@@ -122,7 +146,7 @@ export const galleryItems = [
     image: '/gallery/Coverup-tattoo-1.png',
   },
 {
-    id: 'work-1',
+    id: 'work-12',
     category: 'coverup-tattoo',
     categoryLabel: 'Coverup Tattoos',
     title: 'coverup-tattoo ',
@@ -130,7 +154,7 @@ export const galleryItems = [
     image: '/gallery/Coverup-tattoo-2.jpg',
   },
   {
-    id: 'work-1',
+    id: 'work-13',
     category: 'coverup-tattoo',
     categoryLabel: 'Coverup Tattoos',
     title: 'coverup-tattoo ',
@@ -138,7 +162,7 @@ export const galleryItems = [
     image: '/gallery/Coverup-tattoo-3.png',
   },
   {
-    id: 'work-1',
+    id: 'work-14',
     category: 'coverup-tattoo',
     categoryLabel: 'Coverup Tattoos',
     title: 'coverup-tattoo ',
@@ -146,7 +170,7 @@ export const galleryItems = [
     image: '/gallery/Coverup-tattoo-4.png',
   },
   {
-    id: 'work-1',
+    id: 'work-15',
     category: 'full-sleeve',
     categoryLabel: 'Full Sleeve Tattoos',
     title: 'Full Sleeve Tattoos ',
@@ -154,7 +178,7 @@ export const galleryItems = [
     image: '/gallery/full-sleeve-1.jpg',
   },
   {
-    id: 'work-2',
+    id: 'work-16',
     category: 'full-sleeve',
     categoryLabel: 'Full Sleeve Tattoos',
     title: 'Full Sleeve Tattoos ',
@@ -162,7 +186,7 @@ export const galleryItems = [
     image: '/gallery/full-sleeve-2.jpg',
   },
   {
-    id: 'work-3',
+    id: 'work-17',
     category: 'full-sleeve',
     categoryLabel: 'Full Sleeve Tattoos',
     title: 'Full Sleeve Tattoos ',
@@ -171,7 +195,7 @@ export const galleryItems = [
   },
 
   {
-    id: 'work-1',
+    id: 'work-18',
     category: 'hyper-realistic',
     categoryLabel: 'Hyper Realistic Tattoos',
     title: 'Hyper Realistic Tattoos ',
@@ -179,7 +203,7 @@ export const galleryItems = [
     image: '/gallery/hyper-realistic-1.png',
   },
   {
-    id: 'work-1',
+    id: 'work-19',
     category: 'hyper-realistic',
     categoryLabel: 'Hyper Realistic Tattoos',
     title: 'Hyper Realistic Tattoos ',
@@ -187,7 +211,7 @@ export const galleryItems = [
     image: '/gallery/hyper-realistic-2.png',
   },
   {
-    id: 'work-1',
+    id: 'work-20',
     category: 'hyper-realistic',
     categoryLabel: 'Hyper Realistic Tattoos',
     title: 'Hyper Realistic Tattoos ',
@@ -195,7 +219,7 @@ export const galleryItems = [
     image: '/gallery/hyper-realistic-3.png',
   },
   {
-    id: 'work-1',
+    id: 'work-21',
     category: 'hyper-realistic',
     categoryLabel: 'Hyper Realistic Tattoos',
     title: 'Hyper Realistic Tattoos ',
@@ -203,7 +227,7 @@ export const galleryItems = [
     image: '/gallery/hyper-realistic-4.png',
   },
   {
-    id: 'work-1',
+    id: 'work-22',
     category: 'hyper-realistic',
     categoryLabel: 'Hyper Realistic Tattoos',
     title: 'Hyper Realistic Tattoos ',
@@ -211,7 +235,7 @@ export const galleryItems = [
     image: '/gallery/hyper-realistic-5.png',
   },
   {
-    id: 'work-1',
+    id: 'work-23',
     category: 'hyper-realistic',
     categoryLabel: 'Hyper Realistic Tattoos',
     title: 'Hyper Realistic Tattoos ',
@@ -219,21 +243,215 @@ export const galleryItems = [
     image: '/gallery/hyper-realistic-6.png',
   },
 
+  {
+    id: 'work-24',
+    category: 'line art',
+    categoryLabel: 'Line Art Tattoos',
+    title: 'Line Art Tattoos ',
+    
+    image: '/gallery/line-art-1.png',
+  },
+
+  {
+    id: 'work-25',
+    category: 'line art',
+    categoryLabel: 'Line Art Tattoos',
+    title: 'Line Art Tattoos ',
+    
+    image: '/gallery/line-art-2.png',
+  },
+  {
+    id: 'work-26',
+    category: 'line art',
+    categoryLabel: 'Line Art Tattoos',
+    title: 'Line Art Tattoos ',
+    
+    image: '/gallery/line-art-3.png',
+  },
+
+  {
+    id: 'work-27',
+    category: 'portrait',
+    categoryLabel: 'Portrait Tattoos',
+    title: 'Portrait Tattoos ',
+    
+    image: '/gallery/portrait-1.png',
+  },
+  {
+    id: 'work-28',
+    category: 'portrait',
+    categoryLabel: 'Portrait Tattoos',
+    title: 'Portrait Tattoos ',
+    
+    image: '/gallery/portrait-2.jpg',
+  },
+  {
+    id: 'work-29',
+    category: 'portrait',
+    categoryLabel: 'Portrait Tattoos',
+    title: 'Portrait Tattoos ',
+    
+    image: '/gallery/portrait-3.png',
+  },
+  {
+    id: 'work-30',
+    category: 'portrait',
+    categoryLabel: 'Portrait Tattoos',
+    title: 'Portrait Tattoos ',
+    
+    image: '/gallery/portrait-4.png',
+  },
+  {
+    id: 'work-31',
+    category: 'portrait',
+    categoryLabel: 'Portrait Tattoos',
+    title: 'Portrait Tattoos ',
+    
+    image: '/gallery/portrait-5.png',
+  },
+  {
+    id: 'work-32',
+    category: 'portrait',
+    categoryLabel: 'Portrait Tattoos',
+    title: 'Portrait Tattoos ',
+    
+    image: '/gallery/portrait-6.png',
+  },
+  {
+    id: 'work-33',
+    category: 'portrait',
+    categoryLabel: 'Portrait Tattoos',
+    title: 'Portrait Tattoos ',
+    
+    image: '/gallery/portrait-7.png',
+  },
+  {
+    id: 'work-34',
+    category: 'portrait',
+    categoryLabel: 'Portrait Tattoos',
+    title: 'Portrait Tattoos ',
+    
+    image: '/gallery/portrait-8.png',
+  },
+  {
+    id: 'work-35',
+    category: 'portrait',
+    categoryLabel: 'Portrait Tattoos',
+    title: 'Portrait Tattoos ',
+    
+    image: '/gallery/portrait-9.jpg',
+  },
+  {
+    id: 'work-36',
+    category: 'portrait',
+    categoryLabel: 'Portrait Tattoos',
+    title: 'Portrait Tattoos ',
+    
+    image: '/gallery/portrait-10.jpg',
+  },
+  {
+    id: 'work-37',
+    category: 'portrait',
+    categoryLabel: 'Portrait Tattoos',
+    title: 'Portrait Tattoos ',
+    
+    image: '/gallery/portrait-11.jpg',
+  },
+  {
+    id: 'work-38',
+    category: 'portrait',
+    categoryLabel: 'Portrait Tattoos',
+    title: 'Portrait Tattoos ',
+    
+    image: '/gallery/portrait-12.jpg',
+  },
+  {
+    id: 'work-39',
+    category: 'realistic',
+    categoryLabel: 'Realistic Tattoos',
+    title: 'Realistic Tattoos ',
+    
+    image: '/gallery/realistic-1.png',
+  },
+  {
+    id: 'work-40',
+    category: 'realistic',
+    categoryLabel: 'Realistic Tattoos',
+    title: 'Realistic Tattoos ',
+    
+    image: '/gallery/realistic-2.png',
+  },
+  {
+    id: 'work-41',
+    category: 'realistic',
+    categoryLabel: 'Realistic Tattoos',
+    title: 'Realistic Tattoos ',
+    
+    image: '/gallery/realistic-3.png',
+  },
+  {
+    id: 'work-42',
+    category: 'realistic',
+    categoryLabel: 'Realistic Tattoos',
+    title: 'Realistic Tattoos ',
+    
+    image: '/gallery/realistic-4.png',
+  },
+  {
+    id: 'work-43',
+    category: 'realistic',
+    categoryLabel: 'Realistic Tattoos',
+    title: 'Realistic Tattoos ',
+    
+    image: '/gallery/realistic-5.png',
+  },
+  {
+    id: 'work-44',
+    category: 'realistic',
+    categoryLabel: 'Realistic Tattoos',
+    title: 'Realistic Tattoos ',
+    
+    image: '/gallery/realistic-6.png',
+  },
+  {
+    id: 'work-45',
+    category: 'realistic',
+    categoryLabel: 'Realistic Tattoos',
+    title: 'Realistic Tattoos ',
+    
+    image: '/gallery/realistic-7.png',
+  },
+  {
+    id: 'work-46',
+    category: 'realistic',
+    categoryLabel: 'Realistic Tattoos',
+    title: 'Realistic Tattoos ',
+    
+    image: '/gallery/realistic-8.png',
+  },
+  {
+    id: 'work-47',
+    category: 'realistic',
+    categoryLabel: 'Realistic Tattoos',
+    title: 'Realistic Tattoos ',
+    
+    image: '/gallery/realistic-9.png',
+  },
+ 
+
 ];
 
 export const galleryCategories = [
-  { id: 'color-tattoo', label: 'color Tattoos', count: 24 },
-  { id: 'realistic', label: 'Realistic Tattoos', count: 31 },
+  { id: 'color-tattoo', label: 'color Tattoos', count: 10 },
+  { id: 'realistic', label: 'Realistic Tattoos', count: 9 },
   { id: 'hyper-realistic', label: 'Hyper Realistic Tattoos', count: 6},
-  { id: 'custom-design', label: 'Custom Design Tattoos', count: 27 },
-  { id: 'destiny', label: 'Destiny Tattoos', count: 40 },
+  { id: 'portrait', label: 'Portrait Tattoos', count: 12 },
+
   { id: 'full-sleeve', label: 'Full Sleeve Tattoos', count: 3 },
-  { id: 'mandala', label: 'Mandala Tattoos', count: 22 },
-  { id: 'religious', label: 'Religious Tattoos', count: 19 },
-  { id: 'couple', label: 'Couple Tattoos', count: 16 },
+  { id: 'line art', label: 'Line Art Tattoos', count: 3 },
+ 
   { id: 'coverup-tattoo', label: 'Cover-Up Tattoos', count: 4 },
-  { id: 'colour', label: 'Colour Tattoos', count: 21 },
-  { id: 'black-grey', label: 'Black & Grey Tattoos', count: 29 },]
+  ]
 // 24 placeholder gallery entries spread across categories, for grid + filter demo
 // export const galleryItems = Array.from({ length: 24 }).map((_, i) => {
 //   const cat = galleryCategories[i % galleryCategories.length];
@@ -246,8 +464,19 @@ export const galleryCategories = [
 //   };
 // });
 
-export const featuredWork = galleryItems.slice(0, 8);
+// export const featuredWork = galleryItems.slice(0, 8);
+// export const featuredWork = galleryCategories
+//   .map((cat) => galleryItems.find((item) => item.category === cat.id))
+//   .filter(Boolean);
 
+const portraitItems = galleryItems.filter((item) => item.category === 'portrait');
+
+export const featuredWork = [
+  ...galleryCategories
+    .map((cat) => galleryItems.find((item) => item.category === cat.id))
+    .filter(Boolean),
+  portraitItems[1], // second portrait piece fills the 8th slot
+].filter(Boolean);
 // export const newsFeatures = [
 //   { outlet: 'News18', headline: 'The tattoo artist reading destiny through ink' },
 //   { outlet: 'Mid-Day', headline: "Mumbai's first Destiny Tattoo consultant" },
@@ -467,3 +696,62 @@ export const tattooTypes = [
 ];
 
 export const budgetRanges = ['Under ₹5,000', '₹5,000 – ₹15,000', '₹15,000 – ₹40,000', '₹40,000+', 'Not sure yet'];
+export const team = [
+  {
+    name: 'Shashikant Shelar',
+    role: 'Founder, CEO & Lead Tattoo Artist',
+    specialization: [
+      'Story-Based Tattoos',
+      'Realism & Portrait Tattoos',
+      'Destiny Tattoos',
+      'Cover-Up Tattoos',
+      'Scar & Stretch Mark Camouflage',
+      'Tattoo Consultation & Design Strategy',
+    ],
+    bio: '',
+    image: '/images/team/shashikant-shelar.jpg',
+  },
+  {
+    name: 'Name not provided', // name missing — add when available
+    role: 'Artist / PMU Specialist',
+    specialization: ['Scar Camouflage', 'Stretch Mark Camouflage', 'Permanent Makeup', 'Color Correction'],
+    bio: '',
+    image: '/images/team/pmu-specialist.jpg',
+  },
+  {
+    name: 'Tejas Shelar',
+    role: 'Tattoo Artist',
+    specialization: ['Black & Grey Tattoos', 'Fine Line Tattoos', 'Geometric Tattoos'],
+    bio: '',
+    image: '/images/team/tejas-shelar.jpg',
+  },
+  {
+    name: 'Harsh Makhwana',
+    role: 'Tattoo Artist',
+    specialization: ['Color Tattoo', 'Custom Tattoo', 'Black & Grey Tattoos', 'Fine Line Tattoos', 'Geometric Tattoos'],
+    bio: '',
+    image: '/images/team/harsh-makhwana.jpg',
+  },
+];
+
+export const testimonialsvideo = [
+  {
+    name: 'Aarti Deshmukh',
+    location: 'Thane',
+    video: '/gallery/testimonial-1.mp4',
+     // optional thumbnail
+  },
+  {
+    name: 'Aarti Deshmukh',
+    location: 'Thane',
+    video: '/gallery/testimonial-2.mp4',
+    
+  },
+  {
+    name: 'Aarti Deshmukh',
+    location: 'Thane',
+    video: '/gallery/testimonial-3.mp4',
+    
+  },
+  // ...baaki testimonials
+];
