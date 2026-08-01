@@ -1,0 +1,80 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;1,400;1,700&family=Plus+Jakarta+Sans:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink text-paper font-body antialiased;
+  }
+
+  /* Venus Gold selection */
+  ::selection {
+    @apply bg-brass text-ink;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.brass.bright');
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .eyebrow {
+    @apply font-data text-[11px] tracking-widest2 uppercase text-brass-bright;
+  }
+
+  .hairline {
+    @apply border-paper-line/20;
+  }
+
+  .container-site {
+    @apply mx-auto w-full max-w-site px-6 md:px-10;
+  }
+}
+
+/* Signature element: the Destiny Wheel — ambient slow rotation */
+@keyframes wheel-drift {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.wheel-drift {
+  animation: wheel-drift 240s linear infinite;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wheel-drift { animation: none; }
+}
+
+/* Fine radial texture — dark green base, barely-there silver dots */
+.ink-texture {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(200, 216, 206, 0.04) 1px,
+    transparent 0
+  );
+  background-size: 22px 22px;
+}
