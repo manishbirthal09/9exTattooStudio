@@ -5,9 +5,42 @@ import ImagePlaceholder from '../components/ImagePlaceholder.jsx';
 import { testimonials, testimonialsvideo, beforeAfter } from '../data/siteData.js';
 
 const googleReviews = [
-  { name: 'Priya N.', rating: 5, text: 'Booked a destiny consultation on a whim, ended up getting two pieces done over the year.' },
-  { name: 'Arjun K.', rating: 5, text: 'Cover-up work is genuinely some of the best I have seen in Mumbai.' },
-  { name: 'Meera S.', rating: 4, text: 'Report took a few days longer than expected but the design was worth the wait.' },
+  
+  {
+    name: 'The Rolling Plate Cloud Kitchen',
+    rating:5,
+    text:
+      'Got a tattoo of Jesus Christ and a Dove, and I’m extremely happy with how it turned out. The tattoo looks very realistic, with amazing detailing and shading. Tattoo Artist Vishal did a fantastic job and was very patient throughout the entire process. It took around 6 hours to complete the design, and the final result looks absolutely amazing. The professionalism, effort, and precision really show in the work. Will surely be coming back here for more tattoos. Highly recommended!',
+    
+  },
+  {
+    name: 'Aanchal Gowda',
+    rating: 5,
+    text:
+      'Took a reference for 9ex via a friend of mine, and the recommendation was up to the mark. Got my first tattoo done here, their ink is amazing and hats off to the artist for delivering such an intricate design so beautifully, that too without pain! I highly recommend everyone who wants tattoos to explore this place 🖤',
+    
+  },
+  {
+    name: 'Pawan Sawant',
+    rating: 5,
+    text:
+      'Yesterday I got a Sai Baba tattoo from 9EX Tattoo Shop and I am very happy with the experience. The team is very professional and friendly. The tattoo was done without any pain and at a very reasonable price. I was a little scared about the pain before, but the artist made the whole process very comfortable. I highly recommend this place to anyone who wants to get a tattoo. Great experience!',
+    
+  },
+  {
+    name: 'Ovee Khare',
+    rating: 5,
+    text:
+      'I came from Badlapur from my friend reference. I recently visited this tattoo shop, and the entire experience was absolutely amazing from start to finish. The moment I walked in, I noticed how clean, organized, and welcoming the place felt.The artist was incredibly talented and patient. They took the time to understand my idea, suggested improvements, and made sure the design was exactly how I imagined it. Their attention to detail was impressive — every line was sharp, every shade perfectly blended. Now you can see a result.',
+    
+  },
+   {
+    name: 'Nandini More',
+    rating: 5,
+    text:
+      'Got my first tattoo done here and it was an amazing experience. I was nervous at first but Shashikant did was very nice and made the experience really amazing.',
+    
+  },
 ];
 
 // const beforeAfter = [

@@ -25,21 +25,21 @@ export const beforeAfter = [
   {
     id: '1',
     
-    title: 'color-tattoo  ',
+    title: 'PMU',
     
     image: '/gallery/1st.webp',
   },
   {
     id: '2',
     
-    title: 'color-tattoo  ',
+    title: 'PMU',
     
     image: '/gallery/2nd.webp',
   },
   {
     id: '3',
     
-    title: 'color-tattoo  ',
+    title: 'PMU',
     
     image: '/gallery/3rd.webp',
   },
@@ -579,32 +579,39 @@ export const achievements = [
 
 export const testimonials = [
   {
-    name: 'Aarti Deshmukh',
+    name: 'The Rolling Plate Cloud Kitchen',
     location: 'Thane',
     quote:
-      'The report explained things about my own life I had not put into words before. The tattoo means something every time I look at it.',
-    type: 'Destiny Consultation',
+      'Got a tattoo of Jesus Christ and a Dove, and I’m extremely happy with how it turned out. The tattoo looks very realistic, with amazing detailing and shading. Tattoo Artist Vishal did a fantastic job and was very patient throughout the entire process. It took around 6 hours to complete the design, and the final result looks absolutely amazing. The professionalism, effort, and precision really show in the work. Will surely be coming back here for more tattoos. Highly recommended!',
+    type: '3D photo-real tattoos',
   },
   {
-    name: 'Rohan Mehta',
+    name: 'Aanchal Gowda',
     location: 'Powai',
     quote:
-      'Asked for a cover-up I thought was unfixable. The new piece sits over the old one like it was never there.',
-    type: 'Cover-Up',
+      'Took a reference for 9ex via a friend of mine, and the recommendation was up to the mark. Got my first tattoo done here, their ink is amazing and hats off to the artist for delivering such an intricate design so beautifully, that too without pain! I highly recommend everyone who wants tattoos to explore this place 🖤',
+    type: 'Fine line tattoos',
   },
   {
-    name: 'Sanaya & Vivaan',
+    name: 'Pawan Sawant',
     location: 'Vashi',
     quote:
-      'We did matching pieces tied to our wedding date. The numerology angle made it feel personal instead of just decorative.',
-    type: 'Couple Tattoo',
+      'Yesterday I got a Sai Baba tattoo from 9EX Tattoo Shop and I am very happy with the experience. The team is very professional and friendly. The tattoo was done without any pain and at a very reasonable price. I was a little scared about the pain before, but the artist made the whole process very comfortable. I highly recommend this place to anyone who wants to get a tattoo. Great experience!',
+    type: 'Hyper Realistic',
   },
   {
-    name: 'Kabir Anand',
+    name: 'Ovee Khare',
     location: 'Bangalore',
     quote:
-      'The color-tattoo work is unbelievably precise. Friends keep asking if it is a photograph.',
-    type: 'Hyper Realistic',
+      'I came from Badlapur from my friend reference. I recently visited this tattoo shop, and the entire experience was absolutely amazing from start to finish. The moment I walked in, I noticed how clean, organized, and welcoming the place felt.The artist was incredibly talented and patient. They took the time to understand my idea, suggested improvements, and made sure the design was exactly how I imagined it. Their attention to detail was impressive — every line was sharp, every shade perfectly blended. Now you can see a result.',
+    type: 'Abstract tattoos',
+  },
+   {
+    name: 'Nandini More',
+    location: 'Thane',
+    quote:
+      'Got my first tattoo done here and it was an amazing experience. I was nervous at first but Shashikant did was very nice and made the experience really amazing.',
+    type: 'Fine line tattoos',
   },
 ];
 
@@ -753,5 +760,5 @@ export const testimonialsvideo = [
     video: 'https://res.cloudinary.com/dkhnzzic6/video/upload/v1783196343/VID_20231021_234345254_1_qpt59w.mp4',
     
   },
-  // ...baaki testimonials
+  
 ];

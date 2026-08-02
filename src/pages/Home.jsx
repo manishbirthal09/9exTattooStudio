@@ -586,10 +586,10 @@ export default function Home({ locationOverride }) {
       {/* ── Testimonials ───────────────────────────────────── */}
       <section className="py-24 overflow-hidden">
         <div className="container-site">
-          <div className="flex items-end justify-between mb-12">
+          <div className="flex  justify-between mb-12">
             <div>
-              <SectionEyebrow index="05">Client Testimonials</SectionEyebrow>
- <SectionEyebrow index="01">Video Testimonials</SectionEyebrow>
+              {/* <SectionEyebrow index="05">Client Testimonials</SectionEyebrow> */}
+ <SectionEyebrow index="05">Video Testimonials</SectionEyebrow>
   <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
     {testimonialsvideo.slice(0, 3).map((t) => (
       <TestimonialVideo key={t.name} t={t} />
@@ -598,14 +598,14 @@ export default function Home({ locationOverride }) {
 
               <h2 className="mt-4 font-display text-3xl md:text-4xl">What clients say</h2>
             </div>
-            <div className="hidden sm:flex items-center gap-2">
-              <div className="flex gap-0.5">
+            {/* <div className="hidden sm:flex items-center gap-2">
+              {/* <div className="flex gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} size={16} fill="#C9A84C" strokeWidth={0} />
                 ))}
-              </div>
-              <span className="font-data text-xs text-muted tracking-widest2">4.9 · Google Reviews</span>
-            </div>
+              </div> */}
+              {/* <span className="font-data text-xs text-muted tracking-widest2">4.9 · Google Reviews</span> 
+            </div> */}
           </div>
         </div>
 
