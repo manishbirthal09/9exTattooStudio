@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>9Ex Tattoo Studio — Homepage Preview (Celestial Theme)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    /* 9Ex Celestial Palette */
+    --ink:          #080E0A;   /* Dark Forest base */
+    --ink-soft:     #0D1710;   /* Panel bg */
+    --ink-line:     #1A2E1F;   /* Dividers */
+    --paper:        #C8D8CE;   /* Moon Silver — primary text */
+    --paper-dim:    #A8BEB4;   /* Moon Silver dimmed */
+    --paper-line:   #3D5445;   /* Subtle divider */
+    --brass:        #C9A84C;   /* Venus Gold */
+    --brass-bright: #DFC070;   /* Venus Gold highlight */
+    --brass-dim:    #9A7C35;   /* Venus Gold shadow */
+    --mercury:      #4A6B55;   /* Mercury Green — CTAs */
+    --virgo:        #5C7A64;   /* Virgo Green — secondary buttons */
+    --steel:        #8FA4B0;   /* Libra Steel — secondary UI */
+  }
+
+  *  { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin:0;
+    background: var(--ink);
+    color: var(--paper);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection { background:var(--brass); color:var(--ink); }
+  h1,h2,h3,.display { font-family:'Fraunces',serif; font-weight:400; margin:0; }
+  .mono { font-family:'JetBrains Mono',monospace; }
+  .wrap { max-width:1280px; margin:0 auto; padding:0 24px; }
+  a { color:inherit; text-decoration:none; }
+
+  /* ── Utilities ── */
+  .eyebrow {
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px; letter-spacing:0.28em;
+    text-transform:uppercase; color:var(--brass-bright);
+    display:flex; align-items:center; gap:12px;
+  }
+  .eyebrow .num  { color:var(--brass); }
+  .eyebrow .rule { height:1px; width:32px; background:rgba(201,168,76,0.4); }
+
+  .btn {
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px; letter-spacing:0.28em; text-transform:uppercase;
+    padding:16px 28px; display:inline-flex; align-items:center; gap:8px;
+    border:1px solid transparent; cursor:pointer; transition: all .15s;
+  }
+  .btn-primary  { background:var(--brass); color:var(--ink); }
+  .btn-primary:hover { background:var(--brass-bright); }
+  .btn-outline  { border-color:rgba(200,216,206,0.3); color:var(--paper); }
+  .btn-outline:hover { border-color:var(--brass-bright); color:var(--brass-bright); }
+  .btn-mercury  { background:var(--mercury); color:var(--paper); }
+  .btn-virgo    { background:var(--virgo); color:var(--paper); }
+
+  /* ── Header ── */
+  header {
+    position:sticky; top:0; z-index:30;
+    background:rgba(8,14,10,0.92); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--ink-line);
+  }
+  .nav-inner { height:80px; display:flex; align-items:center; justify-content:space-between; }
+  nav.links  { display:flex; gap:32px; font-size:14px; color:rgba(200,216,206,0.85); }
+  nav.links a:hover { color:var(--brass-bright); }
+  @media(max-width:980px){ nav.links{display:none;} }
+
+  /* ── Hero ── */
+  .hero {
+    position:relative; overflow:hidden;
+    border-bottom:1px solid var(--ink-line);
+    background-image: radial-gradient(circle at 1px 1px, rgba(200,216,206,0.04) 1px, transparent 0);
+    background-size:22px 22px;
+  }
+  .hero-inner {
+    position:relative; padding:120px 0 160px;
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px;
+  }
+  @media(max-width:980px){ .hero-inner{grid-template-columns:1fr; padding:80px 0 100px;} }
+  .hero h1 { font-size:56px; line-height:1.08; margin-top:24px; max-width:560px; }
+  @media(max-width:600px){ .hero h1{font-size:36px;} }
+  .hero h1 em { font-style:italic; color:var(--brass-bright); }
+  .hero p.lead { margin-top:24px; max-width:420px; color:var(--paper-dim); line-height:1.6; }
+  .hero .ctas { margin-top:36px; display:flex; gap:16px; flex-wrap:wrap; }
+
+  .stats { margin-top:64px; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; max-width:520px; }
+  @media(max-width:600px){ .stats{grid-template-columns:repeat(2,1fr);} }
+  .stats .n { font-family:'Fraunces',serif; font-size:26px; color:var(--brass-bright); }
+  .stats .l { margin-top:4px; font-size:11px; color:var(--steel); line-height:1.4; }
+
+  /* Destiny Wheel */
+  .wheel { position:absolute; right:-180px; top:50%; transform:translateY(-50%); opacity:0.22; }
+  @media(max-width:980px){ .wheel{display:none;} }
+  @keyframes spin { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+  .wheel svg { animation: spin 240s linear infinite; transform-origin:center; }
+
+  /* ── Sections ── */
+  section { padding:96px 0; }
+  .section-line { border-top:1px solid var(--ink-line); border-bottom:1px solid var(--ink-line); }
+  .on-soft  { background:var(--ink-soft); }
+  /* Mercury Green CTA section */
+  .on-mercury { background:var(--mercury); color:var(--paper); }
+  /* Virgo Green section variant */
+  .on-virgo { background: #0F1E13; } /* deep tint between ink and mercury */
+
+  /* ── Gallery grid ── */
+  .row-head { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+  h2.title { font-size:34px; margin-top:16px; }
+  @media(max-width:600px){ h2.title{font-size:26px;} }
+  .grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:48px; }
+  @media(max-width:900px){ .grid4{grid-template-columns:repeat(2,1fr);} }
+  .ph {
+    position:relative; aspect-ratio:4/5;
+    background:var(--ink-soft); border:1px solid var(--ink-line);
+    display:flex; align-items:center; justify-content:center; padding:16px; text-align:center;
+  }
+  .ph span { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--steel); opacity:0.8; }
+  .ph-line { position:absolute; inset:0; pointer-events:none; }
+
+  /* ── Founder ── */
+  .founder { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+  @media(max-width:900px){ .founder{grid-template-columns:1fr;} }
+  .ph2 {
+    aspect-ratio:3/4; background:var(--ink-line);
+    border:1px solid rgba(74,107,85,0.3);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .ph2 span { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--steel); opacity:0.7; }
+  .founder h2 { font-size:32px; margin-top:16px; }
+  .founder .role { margin-top:4px; color:var(--steel); font-size:14px; }
+  .founder p.bio { margin-top:24px; max-width:420px; line-height:1.7; color:var(--paper-dim); }
+  .founder .ctas { margin-top:32px; display:flex; gap:16px; flex-wrap:wrap; }
+
+  /* ── News ── */
+  .news { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--ink-line); border:1px solid var(--ink-line); margin-top:40px; }
+  @media(max-width:900px){ .news{grid-template-columns:repeat(2,1fr);} }
+  .news div { background:var(--ink-soft); padding:24px; transition:.15s; }
+  .news div:hover { background:#101A12; }
+  .news .outlet  { font-family:'Fraunces',serif; font-size:18px; color:var(--brass-bright); }
+  .news .headline{ margin-top:8px; font-size:14px; color:var(--paper-dim); line-height:1.5; }
+
+  /* ── Consultation steps ── */
+  .steps { display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:56px; }
+  @media(max-width:900px){ .steps{grid-template-columns:1fr;} }
+  .steps ol { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:32px; }
+  .steps li  { display:flex; gap:20px; }
+  .steps .n  { font-family:'JetBrains Mono',monospace; font-size:14px; color:var(--brass); flex-shrink:0; padding-top:4px; }
+  .steps .t  { font-family:'Fraunces',serif; font-size:18px; }
+  .steps .b  { margin-top:4px; font-size:14px; color:var(--paper-dim); line-height:1.6; }
+  .deliver {
+    border:1px solid var(--paper-line);
+    background:rgba(26,46,31,0.5);
+    padding:32px;
+  }
+  .deliver ul { list-style:none; margin:20px 0 0; padding:0; display:flex; flex-direction:column; gap:12px; }
+  .deliver li { display:flex; align-items:center; gap:12px; font-size:14px; color:var(--paper-dim); }
+  .deliver li::before { content:''; width:6px; height:6px; background:var(--brass-bright); display:inline-block; }
+
+  /* ── Testimonials ── */
+  .testi { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:40px; }
+  @media(max-width:900px){ .testi{grid-template-columns:1fr;} }
+  .tcard { border:1px solid var(--ink-line); padding:28px; transition:.15s; }
+  .tcard:hover { border-color:rgba(201,168,76,0.3); }
+  .stars { color:var(--brass-bright); font-size:13px; letter-spacing:2px; }
+  .tcard p.quote { margin-top:16px; font-size:14px; line-height:1.6; color:var(--paper-dim); }
+  .tcard .name   { margin-top:20px; font-family:'Fraunces',serif; font-size:16px; }
+  .tcard .meta   { font-size:12px; color:var(--steel); }
+
+  /* ── Locations ── */
+  .locs { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:40px; }
+  @media(max-width:900px){ .locs{grid-template-columns:repeat(2,1fr);} }
+  .loc { border:1px solid var(--ink-line); padding:24px; background:var(--ink-soft); transition:.15s; }
+  .loc:hover { border-color:rgba(74,107,85,0.5); }
+  .loc-dot { color:var(--mercury); font-size:18px; }
+  .loc .city { font-family:'Fraunces',serif; font-size:20px; margin-top:12px; }
+  .loc .addr { margin-top:8px; font-size:12px; color:var(--steel); line-height:1.5; }
+  .map {
+    margin-top:32px; aspect-ratio:21/9; border:1px solid var(--ink-line);
+    display:flex; align-items:center; justify-content:center;
+    background: linear-gradient(135deg, #080E0A 0%, #0D1710 100%);
+  }
+  .map span { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--steel); opacity:0.6; }
+
+  /* ── Final CTA ── */
+  .cta-final {
+    text-align:center;
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(74,107,85,0.15) 0%, transparent 70%),
+                var(--ink);
+    background-image: radial-gradient(circle at 1px 1px, rgba(200,216,206,0.04) 1px, transparent 0),
+                      radial-gradient(ellipse 80% 60% at 50% 50%, rgba(74,107,85,0.15) 0%, transparent 70%);
+    background-size: 22px 22px, 100% 100%;
+  }
+  .cta-final h2 { font-size:42px; }
+  @media(max-width:600px){ .cta-final h2{font-size:28px;} }
+  .cta-final .ctas { margin-top:36px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+
+  /* ── Footer ── */
+  footer { border-top:1px solid var(--ink-line); background:var(--ink-soft); padding:64px 0 24px; }
+  .fcols { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; }
+  @media(max-width:900px){ .fcols{grid-template-columns:1fr 1fr;} }
+  footer a:hover { color:var(--brass-bright); }
+  footer .copy { margin-top:48px; padding-top:24px; border-top:1px solid var(--ink-line); font-size:12px; color:var(--steel); }
+
+  /* ── Persistent chrome ── */
+  .whatsapp-fab {
+    position:fixed; bottom:24px; right:24px; z-index:50;
+    width:56px; height:56px; border-radius:0;
+    background:#25D366; color:#111; display:flex; align-items:center; justify-content:center;
+    font-size:24px; box-shadow:0 4px 20px rgba(0,0,0,0.4); transition:.15s;
+  }
+  .whatsapp-fab:hover { transform:scale(1.06); }
+  .palette-badge {
+    position:fixed; top:88px; right:0; z-index:60;
+    background:var(--ink-soft); border:1px solid var(--ink-line);
+    border-right:none; padding:12px 14px;
+    font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.1em;
+    text-transform:uppercase; color:var(--steel);
+  }
+  .palette-badge .swatch { display:flex; flex-direction:column; gap:6px; margin-top:8px; }
+  .palette-badge .sw { display:flex; align-items:center; gap:8px; }
+  .palette-badge .dot { width:10px; height:10px; flex-shrink:0; }
+</style>
+</head>
+<body>
+
+<!-- Palette reference badge -->
+<div class="palette-badge">
+  Theme
+  <div class="swatch">
+    <div class="sw"><div class="dot" style="background:#080E0A;border:1px solid #3D5445;"></div> Dark Forest</div>
+    <div class="sw"><div class="dot" style="background:#C8D8CE;"></div> Moon Silver</div>
+    <div class="sw"><div class="dot" style="background:#C9A84C;"></div> Venus Gold</div>
+    <div class="sw"><div class="dot" style="background:#4A6B55;"></div> Mercury Green</div>
+    <div class="sw"><div class="dot" style="background:#8FA4B0;"></div> Libra Steel</div>
+    <div class="sw"><div class="dot" style="background:#5C7A64;"></div> Virgo Green</div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav-inner">
+    <div class="display" style="font-size:20px; letter-spacing:0.04em;">
+      9Ex <span style="color:var(--brass-bright)">Tattoo</span>
+    </div>
+    <nav class="links">
+      <a href="#">Gallery</a>
+      <a href="#">Destiny Consultation</a>
+      <a href="#">About Us</a>
+      <a href="#">Achievements</a>
+      <a href="#">Testimonials</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </nav>
+    <a class="btn btn-primary" href="#">Book Appointment</a>
+  </div>
+</header>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="wheel">
+    <svg width="680" height="680" viewBox="0 0 680 680">
+      <circle cx="340" cy="340" r="326" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
+      <circle cx="340" cy="340" r="265" fill="none" stroke="#C9A84C" stroke-width="0.75" opacity="0.35"/>
+      <circle cx="340" cy="340" r="143" fill="none" stroke="#C9A84C" stroke-width="0.75" opacity="0.4"/>
+      <!-- 12 house ticks -->
+      <line x1="340" y1="14"  x2="340" y2="74"  stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
+      <line x1="503" y1="57"  x2="476" y2="103" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
+      <line x1="626" y1="177" x2="583" y2="204" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
+      <line x1="666" y1="340" x2="606" y2="340" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
+      <line x1="626" y1="503" x2="583" y2="476" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
+      <line x1="503" y1="623" x2="476" y2="577" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
+      <line x1="340" y1="666" x2="340" y2="606" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
+      <line x1="177" y1="623" x2="204" y2="577" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
+      <line x1="54"  y1="503" x2="97"  y2="476" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
+      <line x1="14"  y1="340" x2="74"  y2="340" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
+      <line x1="54"  y1="177" x2="97"  y2="204" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
+      <line x1="177" y1="57"  x2="204" y2="103" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
+      <!-- 9-point star (inner) -->
+      <polygon points="340,197 368,280 453,280 385,330 411,413 340,363 269,413 295,330 227,280 312,280"
+               fill="none" stroke="#DFC070" stroke-width="0.8" opacity="0.45"/>
+      <circle cx="340" cy="340" r="4" fill="#DFC070"/>
+    </svg>
+  </div>
+
+  <div class="wrap hero-inner">
+    <div>
+      <p class="eyebrow"><span class="rule"></span>India's First Destiny Tattoo Consultant</p>
+      <h1>A tattoo designed<br>around your <em>destiny</em>,<br>not a catalogue.</h1>
+      <p class="lead">Custom tattoos designed through personality, life goals, numerology, astrology and personal storytelling — read before they're drawn.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#">Book Appointment</a>
+        <a class="btn btn-outline" href="#">Talk To An Expert</a>
+      </div>
+      <div class="stats">
+        <div><div class="n">15+</div><div class="l">Years Experience</div></div>
+        <div><div class="n">9,000+</div><div class="l">Tattoos Created</div></div>
+        <div><div class="n">4</div><div class="l">Studio Locations</div></div>
+        <div><div class="n">1st</div><div class="l">India's First Destiny Consultant</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Featured Work ── -->
+<section>
+  <div class="wrap">
+    <div class="row-head">
+      <div>
+        <p class="eyebrow"><span class="num">№ 01</span><span class="rule"></span>Featured Work</p>
+        <h2 class="title">A small sample of recent pieces</h2>
+      </div>
+      <a class="btn" style="border:none;color:var(--brass-bright);" href="#">View Full Gallery →</a>
+    </div>
+    <div class="grid4">
+      <div class="ph"><svg class="ph-line" viewBox="0 0 100 125"><line x1="0" y1="0" x2="100" y2="125" stroke="#1A2E1F" stroke-width="1"/><line x1="100" y1="0" x2="0" y2="125" stroke="#1A2E1F" stroke-width="1"/></svg><span>Portrait Tattoo</span></div>
+      <div class="ph"><svg class="ph-line" viewBox="0 0 100 125"><line x1="0" y1="0" x2="100" y2="125" stroke="#1A2E1F" stroke-width="1"/><line x1="100" y1="0" x2="0" y2="125" stroke="#1A2E1F" stroke-width="1"/></svg><span>Destiny Tattoo</span></div>
+      <div class="ph"><svg class="ph-line" viewBox="0 0 100 125"><line x1="0" y1="0" x2="100" y2="125" stroke="#1A2E1F" stroke-width="1"/><line x1="100" y1="0" x2="0" y2="125" stroke="#1A2E1F" stroke-width="1"/></svg><span>Mandala Tattoo</span></div>
+      <div class="ph"><svg class="ph-line" viewBox="0 0 100 125"><line x1="0" y1="0" x2="100" y2="125" stroke="#1A2E1F" stroke-width="1"/><line x1="100" y1="0" x2="0" y2="125" stroke="#1A2E1F" stroke-width="1"/></svg><span>Full Sleeve</span></div>
+      <div class="ph"><svg class="ph-line" viewBox="0 0 100 125"><line x1="0" y1="0" x2="100" y2="125" stroke="#1A2E1F" stroke-width="1"/><line x1="100" y1="0" x2="0" y2="125" stroke="#1A2E1F" stroke-width="1"/></svg><span>Realistic Tattoo</span></div>
+      <div class="ph"><svg class="ph-line" viewBox="0 0 100 125"><line x1="0" y1="0" x2="100" y2="125" stroke="#1A2E1F" stroke-width="1"/><line x1="100" y1="0" x2="0" y2="125" stroke="#1A2E1F" stroke-width="1"/></svg><span>Couple Tattoo</span></div>
+      <div class="ph"><svg class="ph-line" viewBox="0 0 100 125"><line x1="0" y1="0" x2="100" y2="125" stroke="#1A2E1F" stroke-width="1"/><line x1="100" y1="0" x2="0" y2="125" stroke="#1A2E1F" stroke-width="1"/></svg><span>Cover-Up</span></div>
+      <div class="ph"><svg class="ph-line" viewBox="0 0 100 125"><line x1="0" y1="0" x2="100" y2="125" stroke="#1A2E1F" stroke-width="1"/><line x1="100" y1="0" x2="0" y2="125" stroke="#1A2E1F" stroke-width="1"/></svg><span>Religious Tattoo</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Founder ── -->
+<section class="section-line on-soft">
+  <div class="wrap founder">
+    <div class="ph2"><span>Founder Portrait</span></div>
+    <div>
+      <p class="eyebrow" style="color:var(--mercury)">
+        <span class="rule" style="background:rgba(74,107,85,0.5)"></span>
+        <span class="num" style="color:var(--mercury)">№ 02</span>Founder
+      </p>
+      <h2>Shashikant Shelar</h2>
+      <p class="role">Founder &amp; CEO, 9Ex Tattoo Studio</p>
+      <p class="bio">Fifteen years on the floor, thousands of tattoos created, and the format that gave the studio its name: reading a client's numerology and story before a single line is drawn.</p>
+      <div class="ctas">
+        <a class="btn" style="border:1px solid var(--ink-line);color:var(--paper);" href="#">Know More</a>
+        <a class="btn btn-primary" href="#">Book Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── News ── -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow"><span class="num">№ 03</span><span class="rule"></span>As Featured In</p>
+    <div class="news">
+      <div><div class="outlet">News18</div><div class="headline">The tattoo artist reading destiny through ink</div></div>
+      <div><div class="outlet">Mid-Day</div><div class="headline">Mumbai's first Destiny Tattoo consultant</div></div>
+      <div><div class="outlet">Hindustan Times</div><div class="headline">When numerology meets the needle</div></div>
+      <div><div class="outlet">Times of India</div><div class="headline">A studio that designs tattoos around your life story</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Consultation Steps ── -->
+<section class="section-line on-soft">
+  <div class="wrap">
+    <p class="eyebrow"><span class="num">№ 04</span><span class="rule"></span>How A Destiny Tattoo Comes Together</p>
+    <h2 class="title" style="max-width:480px;">Five steps from your story to a blueprint on skin.</h2>
+    <div class="steps">
+      <ol>
+        <li><div class="n">01</div><div><div class="t">Personal Information Collection</div><div class="b">Birth details and the life chapter you want marked.</div></div></li>
+        <li><div class="n">02</div><div><div class="t">Research &amp; Analysis</div><div class="b">Numerology and astrology studied alongside your story.</div></div></li>
+        <li><div class="n">03</div><div><div class="t">Detailed Report Creation</div><div class="b">Findings compiled into a written Destiny Report.</div></div></li>
+        <li><div class="n">04</div><div><div class="t">Video Consultation</div><div class="b">A one-to-one call to walk through the report.</div></div></li>
+        <li><div class="n">05</div><div><div class="t">Custom Tattoo Design</div><div class="b">Symbols drawn into a placement-specific blueprint.</div></div></li>
+      </ol>
+      <div class="deliver">
+        <p class="eyebrow" style="margin:0;">What You Receive</p>
+        <ul>
+          <li>Detailed Analysis</li><li>Destiny Report</li><li>Tattoo Recommendation</li>
+          <li>Symbol Analysis</li><li>Video Consultation</li><li>Tattoo Blueprint</li>
+        </ul>
+        <a class="btn btn-primary" style="margin-top:32px;width:100%;justify-content:center;display:flex;" href="#">Book Destiny Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Testimonials ── -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow"><span class="num">№ 05</span><span class="rule"></span>Client Testimonials</p>
+    <div class="testi">
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"The report explained things about my own life I had not put into words before. The tattoo means something every time I look at it."</p>
+        <div class="name">Aarti Deshmukh</div>
+        <div class="meta">Thane · Destiny Consultation</div>
+      </div>
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Asked for a cover-up I thought was unfixable. The new piece sits over the old one like it was never there."</p>
+        <div class="name">Rohan Mehta</div>
+        <div class="meta">Powai · Cover-Up</div>
+      </div>
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"We did matching pieces tied to our wedding date. The numerology angle made it feel personal instead of just decorative."</p>
+        <div class="name">Sanaya &amp; Vivaan</div>
+        <div class="meta">Vashi · Couple Tattoo</div>
+      </div>
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"The portrait work is unbelievably precise. Friends keep asking if it is a photograph."</p>
+        <div class="name">Kabir Anand</div>
+        <div class="meta">Bangalore · Hyper Realistic</div>
+      </div>
+    </div>
+    <a class="btn" style="border:none;color:var(--brass-bright);margin-top:24px;" href="#">See More Reviews →</a>
+  </div>
+</section>
+
+<!-- ── Locations ── -->
+<section class="section-line on-soft">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--mercury)">
+      <span class="num" style="color:var(--mercury)">№ 06</span>
+      <span class="rule" style="background:rgba(74,107,85,0.5)"></span>Studio Locations
+    </p>
+    <div class="locs">
+      <div class="loc"><span class="loc-dot">◎</span><div class="city">Thane</div><div class="addr">Studio address line, Thane, Maharashtra</div></div>
+      <div class="loc"><span class="loc-dot">◎</span><div class="city">Powai</div><div class="addr">Studio address line, Powai, Mumbai</div></div>
+      <div class="loc"><span class="loc-dot">◎</span><div class="city">Vashi</div><div class="addr">Studio address line, Vashi, Navi Mumbai</div></div>
+      <div class="loc"><span class="loc-dot">◎</span><div class="city">Bangalore</div><div class="addr">Studio address line, Bangalore, Karnataka</div></div>
+    </div>
+    <div class="map"><span>Google Maps Integration — All Locations</span></div>
+  </div>
+</section>
+
+<!-- ── Final CTA ── -->
+<section class="cta-final">
+  <div class="wrap" style="padding-top:96px;padding-bottom:96px;">
+    <h2>Ready to create your story?</h2>
+    <div class="ctas">
+      <a class="btn btn-primary" href="#">Book Appointment</a>
+      <a class="btn btn-outline" href="#">Talk To An Expert</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fcols">
+    <div>
+      <div class="display" style="font-size:18px; letter-spacing:0.04em;">
+        9Ex <span style="color:var(--brass-bright)">Tattoo</span>
+      </div>
+      <p style="margin-top:12px;font-size:14px;color:var(--steel);max-width:280px;line-height:1.6;">
+        India's First Destiny Tattoo Consultant. Custom tattoos designed through personality,
+        numerology, astrology and personal storytelling.
+      </p>
+      <div style="margin-top:20px;display:flex;gap:16px;color:var(--steel);font-size:18px;">
+        <a href="#" style="color:var(--steel);">⬡</a>
+        <a href="#" style="color:var(--steel);">⬡</a>
+        <a href="#" style="color:var(--steel);">⬡</a>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow" style="margin-bottom:16px;">Quick Links</p>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--paper-dim);">
+        <a href="#">Home</a><a href="#">Gallery</a><a href="#">Destiny Consultation</a><a href="#">About Us</a>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow" style="margin-bottom:16px;">Gallery</p>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--paper-dim);">
+        <a href="#">Portrait Tattoos</a><a href="#">Realistic Tattoos</a><a href="#">Mandala Tattoos</a>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow" style="margin-bottom:16px;">Studios</p>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--paper-dim);">
+        <span>Thane</span><span>Powai</span><span>Vashi</span><span>Bangalore</span>
+      </div>
+    </div>
+  </div>
+  <div class="wrap copy">© 2026 9Ex Tattoo Studio. All rights reserved.</div>
+</footer>
+
+<a class="whatsapp-fab" href="#">💬</a>
+
+</body>
+</html>
