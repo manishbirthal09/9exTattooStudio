@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f5f2ea;
+  color: #141414;
+}
+
+.btn-primary {
+  @apply bg-ink text-paper px-4 py-2 text-sm font-medium hover:bg-ink-soft transition-colors disabled:opacity-50;
+}
+
+.btn-outline {
+  @apply border border-ink/20 text-ink px-4 py-2 text-sm font-medium hover:border-ink/50 transition-colors disabled:opacity-50;
+}
+
+.btn-danger {
+  @apply text-blood border border-blood/30 px-3 py-1.5 text-xs font-medium hover:bg-blood/5 transition-colors;
+}
+
+.input-field {
+  @apply w-full border border-ink/15 px-3 py-2 text-sm bg-white focus:outline-none focus:border-brass;
+}
+
+.label-field {
+  @apply block text-xs font-medium text-ink/60 uppercase tracking-wide mb-1;
+}
