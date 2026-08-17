@@ -3,21 +3,43 @@ import { useSearchParams } from 'react-router-dom';
 import SectionEyebrow from '../components/SectionEyebrow.jsx';
 import ImagePlaceholder from '../components/ImagePlaceholder.jsx';
 import Button from '../components/Button.jsx';
-import { galleryCategories, galleryItems } from '../data/siteData.js';
+import { galleryCategories } from '../data/siteData.js';
+import api from '../api/axios.js';
 
 export default function Gallery() {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCategory = searchParams.get('category') || 'all';
   const [active, setActive] = useState(initialCategory);
 const [lightboxIndex, setLightboxIndex] = useState(null);
+const [galleryItems, setGalleryItems] = useState([]);
+
   useEffect(() => {
     setActive(searchParams.get('category') || 'all');
   }, [searchParams]);
 
+  useEffect(() => {
+    api.get('/portfolio')
+      .then(({ data }) => {
+        setGalleryItems(
+          data.map((item) => ({
+            id: item._id,
+            title: item.title,
+            category: item.category,
+            image: item.image.url,
+          }))
+        );
+      })
+      .catch((err) => console.error('Failed to load gallery', err));
+  }, []);
+
   const filtered = useMemo(
     () => (active === 'all' ? galleryItems : galleryItems.filter((g) => g.category === active)),
-    [active]
+    [active, galleryItems]
   );
+  // const filtered = useMemo(
+  //   () => (active === 'all' ? galleryItems : galleryItems.filter((g) => g.category === active)),
+  //   [active]
+  // );
 
   function selectCategory(id) {
     setActive(id);

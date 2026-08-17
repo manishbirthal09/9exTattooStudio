@@ -22,7 +22,7 @@ export default function AboutUs() {
         <p className="mt-5 max-w-2xl text-paper/70 leading-relaxed">
           What began as a single chair in Thane grew into four studios across Mumbai and
           Bangalore, built on one idea: a tattoo should mean something specific to the person
-          wearing it. That idea became the Destiny Tattoo Consultation — now the studio&apos;s
+          wearing it. That idea became the Destiny Tattoo Brand — now the studio&apos;s
           signature offering.
         </p>
 

@@ -719,9 +719,9 @@ export const team = [
     image: '/images/team/shashikant-shelar.webp',
   },
   {
-    name: 'Name not provided', // name missing — add when available
-    role: 'Artist / PMU Specialist',
-    specialization: ['Scar Camouflage', 'Stretch Mark Camouflage', 'Permanent Makeup', 'Color Correction'],
+    name: 'Jyoti Shelar',
+    role: 'Laser Tattoo Removal Specialist',
+    specialization: ['Laser Tattoo Removal','Multi-Color Tattoo Removal',  'Laser Treatment','Tattoo Fading (for Cover-Up Prep)',],
     bio: '',
     image: '/images/team/pmu-specialist.webp',
   },

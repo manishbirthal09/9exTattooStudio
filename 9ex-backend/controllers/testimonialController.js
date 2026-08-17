@@ -1,20 +1,20 @@
 import Testimonial from '../models/Testimonial.js';
-import cloudinary from '../config/cloudinary.js';
+import cloudinary, { uploadBufferToCloudinary } from '../config/cloudinary.js';
 
 // Uploads an in-memory file buffer (from multer.memoryStorage) to Cloudinary
 // with the correct resource_type, since video and thumbnail need different
 // upload handling.
-const uploadBufferToCloudinary = (file, { folder, resourceType }) =>
-  new Promise((resolve, reject) => {
-    const stream = cloudinary.uploader.upload_stream(
-      { folder, resource_type: resourceType },
-      (err, result) => {
-        if (err) return reject(err);
-        resolve(result);
-      }
-    );
-    stream.end(file.buffer);
-  });
+// const uploadBufferToCloudinary = (file, { folder, resourceType }) =>
+//   new Promise((resolve, reject) => {
+//     const stream = cloudinary.uploader.upload_stream(
+//       { folder, resource_type: resourceType },
+//       (err, result) => {
+//         if (err) return reject(err);
+//         resolve(result);
+//       }
+//     );
+//     stream.end(file.buffer);
+//   });
 
 // GET /api/testimonials  (public — only published unless ?all=true)
 export const getTestimonials = async (req, res) => {

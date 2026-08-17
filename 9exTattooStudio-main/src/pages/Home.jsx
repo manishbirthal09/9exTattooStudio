@@ -7,16 +7,24 @@ import SectionEyebrow from '../components/SectionEyebrow.jsx';
 import ImagePlaceholder from '../components/ImagePlaceholder.jsx';
 import DestinyWheel from '../components/DestinyWheel.jsx';
 import LocationHeroImage from '../components/LocationHeroImage.jsx';
+// import {
+//   studio,
+//   featuredWork,
+//   newsFeatures,
+//   consultationSteps,
+//   consultationDeliverables,
+//   testimonials,
+//   milestones,
+//   testimonialsvideo
+// } from '../data/siteData.js';
 import {
   studio,
-  featuredWork,
   newsFeatures,
   consultationSteps,
   consultationDeliverables,
-  testimonials,
   milestones,
-  testimonialsvideo
 } from '../data/siteData.js';
+import api from '../api/axios.js';
 import { studioLocations } from '../data/StudioLocations.js';
 
 import { Play, Volume2, VolumeX } from 'lucide-react';
@@ -119,6 +127,7 @@ function TestimonialVideo({ t }) {
     setMuted(v.muted);
   }
 
+  
   return (
     <div>
       <div className="relative aspect-9/16 overflow-hidden bg-ink-soft cursor-pointer" onClick={togglePlay}>
@@ -319,6 +328,53 @@ export function FeaturedWorkSlider({ featuredWork }) {
  */
 export default function Home({ locationOverride }) {
   const activeSlug = locationOverride?.slug;
+const [featuredWork, setFeaturedWork] = useState([]);
+  const [testimonials, setTestimonials] = useState([]);
+  const [testimonialsvideo, setTestimonialsvideo] = useState([]);
+
+  useEffect(() => {
+    // Featured portfolio images
+    api.get('/portfolio?featured=true')
+      .then(({ data }) => {
+        setFeaturedWork(
+          data.map((item) => ({
+            id: item._id,
+            title: item.title,
+            category: item.category,
+            image: item.image.url,
+          }))
+        );
+      })
+      .catch((err) => console.error('Failed to load portfolio', err));
+
+    // Text reviews
+    api.get('/reviews')
+      .then(({ data }) => {
+        setTestimonials(
+          data.map((r) => ({
+            name: r.name,
+            location: r.location,
+            quote: r.quote,
+            type: r.type,
+          }))
+        );
+      })
+      .catch((err) => console.error('Failed to load reviews', err));
+
+    // Video testimonials
+    api.get('/testimonials')
+      .then(({ data }) => {
+        setTestimonialsvideo(
+          data.map((t) => ({
+            name: t.clientName,
+            location: t.caption,
+            video: t.video.url,
+            poster: t.thumbnail?.url,
+          }))
+        );
+      })
+      .catch((err) => console.error('Failed to load video testimonials', err));
+  }, []);
 
   return (
     <div>

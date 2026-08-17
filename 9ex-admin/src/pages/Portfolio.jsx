@@ -4,7 +4,17 @@ import api from '../api/axios.js';
 import Modal from '../components/Modal.jsx';
 import ConfirmDialog from '../components/ConfirmDialog.jsx';
 
-const CATEGORIES = ['numerology', 'astrology', 'portrait', 'blackwork', 'fineline', 'coverup', 'other'];
+const CATEGORIES = [ 'color-tattoo',
+  'Realistic',
+  'Hyper Realistic',
+  'Custom Design',
+  'Destiny Tattoo',
+  'Full Sleeve',
+  'Mandala',
+  'Religious',
+  'Couple',
+  'Cover-Up',
+  'Other',];
 
 const emptyForm = { title: '', category: 'other', tags: '', featured: false, order: 0 };
 

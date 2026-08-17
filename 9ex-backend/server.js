@@ -1,5 +1,7 @@
-import express from 'express';
+
 import dotenv from 'dotenv';
+dotenv.config();
+import express from 'express';
 import cors from 'cors';
 import connectDB from './config/db.js';
 
@@ -9,9 +11,10 @@ import blogRoutes from './routes/blogRoutes.js';
 import testimonialRoutes from './routes/testimonialRoutes.js';
 import reviewRoutes from './routes/reviewRoutes.js';
 
-dotenv.config();
-connectDB();
 
+connectDB();
+console.log('CLIENT_URL:', process.env.CLIENT_URL);
+console.log('ADMIN_URL:', process.env.ADMIN_URL);
 const app = express();
 
 app.use(

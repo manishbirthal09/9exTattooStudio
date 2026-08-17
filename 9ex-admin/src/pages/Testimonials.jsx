@@ -184,7 +184,7 @@ export default function Testimonials() {
           <div>
             <label className="label-field">Video {editing && '(leave empty to keep current)'}</label>
             <input type="file" accept="video/*" className="input-field" onChange={(e) => setVideoFile(e.target.files[0])} />
-            <p className="text-[11px] text-ink/40 mt-1">Keep videos short/compressed — Cloudinary free tier has limited monthly credits.</p>
+            <p className="text-[11px] text-ink/40 mt-1">Keep videos short/compressed</p>
           </div>
 
           <div>
