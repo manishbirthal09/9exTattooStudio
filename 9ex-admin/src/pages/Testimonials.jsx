@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Plus, Pencil, Trash2, Video as VideoIcon } from 'lucide-react';
 import api from '../api/axios.js';
 import Modal from '../components/Modal.jsx';
