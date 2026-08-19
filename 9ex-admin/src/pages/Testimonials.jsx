@@ -58,13 +58,42 @@ export default function Testimonials() {
     setModalOpen(true);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
 
-    if (!editing && !videoFile) {
-      setError('Please select a video');
-      return;
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setError('');
+
+  if (!editing && !videoFile) {
+    setError('Please select a video');
+    return;
+  }
+
+  setSaving(true);
+  try {
+    let videoUrl, videoPublicId;
+
+    if (videoFile) {
+      const { data: sig } = await api.post('/upload/signature', {
+        folder: '9ex-tattoo/videos',
+      });
+
+      const cloudForm = new FormData();
+      cloudForm.append('file', videoFile);
+      cloudForm.append('api_key', sig.apiKey);
+      cloudForm.append('timestamp', sig.timestamp);
+      cloudForm.append('signature', sig.signature);
+      cloudForm.append('folder', sig.folder);
+
+      const cloudRes = await fetch(
+        `https://api.cloudinary.com/v1_1/${sig.cloudName}/video/upload`,
+        { method: 'POST', body: cloudForm }
+      );
+      const cloudData = await cloudRes.json();
+
+      if (!cloudRes.ok) throw new Error(cloudData.error?.message || 'Video upload failed');
+
+      videoUrl = cloudData.secure_url;
+      videoPublicId = cloudData.public_id;
     }
 
     const fd = new FormData();
@@ -72,28 +101,63 @@ export default function Testimonials() {
     fd.append('caption', form.caption);
     fd.append('published', form.published);
     fd.append('order', form.order);
-    if (videoFile) fd.append('video', videoFile);
+    if (videoUrl) fd.append('videoUrl', videoUrl);
+    if (videoPublicId) fd.append('videoPublicId', videoPublicId);
     if (thumbFile) fd.append('thumbnail', thumbFile);
 
-    setSaving(true);
-    try {
-      if (editing) {
-        await api.put(`/testimonials/${editing._id}`, fd, {
-          headers: { 'Content-Type': 'multipart/form-data' },
-        });
-      } else {
-        await api.post('/testimonials', fd, {
-          headers: { 'Content-Type': 'multipart/form-data' },
-        });
-      }
-      setModalOpen(false);
-      load();
-    } catch (err) {
-      setError(err.response?.data?.message || 'Something went wrong. Large videos take time — please wait and retry if it timed out.');
-    } finally {
-      setSaving(false);
+    if (editing) {
+      await api.put(`/testimonials/${editing._id}`, fd, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+    } else {
+      await api.post('/testimonials', fd, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
     }
-  };
+    setModalOpen(false);
+    load();
+  } catch (err) {
+    setError(err.response?.data?.message || err.message || 'Something went wrong.');
+  } finally {
+    setSaving(false);
+  }
+};
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setError('');
+
+  //   if (!editing && !videoFile) {
+  //     setError('Please select a video');
+  //     return;
+  //   }
+
+  //   const fd = new FormData();
+  //   fd.append('clientName', form.clientName);
+  //   fd.append('caption', form.caption);
+  //   fd.append('published', form.published);
+  //   fd.append('order', form.order);
+  //   if (videoFile) fd.append('video', videoFile);
+  //   if (thumbFile) fd.append('thumbnail', thumbFile);
+
+  //   setSaving(true);
+  //   try {
+  //     if (editing) {
+  //       await api.put(`/testimonials/${editing._id}`, fd, {
+  //         headers: { 'Content-Type': 'multipart/form-data' },
+  //       });
+  //     } else {
+  //       await api.post('/testimonials', fd, {
+  //         headers: { 'Content-Type': 'multipart/form-data' },
+  //       });
+  //     }
+  //     setModalOpen(false);
+  //     load();
+  //   } catch (err) {
+  //     setError(err.response?.data?.message || 'Something went wrong. Large videos take time — please wait and retry if it timed out.');
+  //   } finally {
+  //     setSaving(false);
+  //   }
+  // };
 
   const handleDelete = async () => {
     setDeleting(true);
