@@ -4,6 +4,7 @@ import SectionEyebrow from '../components/SectionEyebrow.jsx';
 import ImagePlaceholder from '../components/ImagePlaceholder.jsx';
 import { achievements, newsFeatures, milestones } from '../data/siteData.js';
 import Button from '../components/Button.jsx';
+import SEO from '../components/SEO.jsx';
 const certifications = [
   'Certified Tattoo Hygiene & Sterilisation Practices',
   'Bloodborne Pathogens Safety Certification',
@@ -13,6 +14,10 @@ const certifications = [
 export default function Achievements() {
   return (
     <div>
+      <SEO title="Achievements"
+      description="Explore the milestones, awards, and recognition that define our journey at 9Ex Tattoo Studio."
+      path="/achievements"
+       />
       <section className="container-site py-20">
         <SectionEyebrow>Achievements</SectionEyebrow>
         <h1 className="mt-4 max-w-2xl font-display text-4xl md:text-5xl">

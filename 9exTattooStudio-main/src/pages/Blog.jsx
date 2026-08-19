@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import SectionEyebrow from '../components/SectionEyebrow.jsx';
 import ImagePlaceholder from '../components/ImagePlaceholder.jsx';
 import { blogPosts } from '../data/siteData.js';
-
+import SEO from '../components/SEO.jsx';
 const categories = ['All', ...new Set(blogPosts.map((p) => p.category))];
 
 export default function Blog() {
@@ -16,6 +16,10 @@ export default function Blog() {
 
   return (
     <div className="container-site py-20">
+      <SEO title="Blog"
+      description="Stay updated with the latest news, tips, and insights from 9Ex Tattoo Studio."
+      path="/blog"
+       />
       <SectionEyebrow>Blog</SectionEyebrow>
       <h1 className="mt-4 font-display text-4xl md:text-5xl">Notes from the studio</h1>
       <p className="mt-4 max-w-xl text-paper/65 leading-relaxed">

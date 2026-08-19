@@ -7,16 +7,8 @@ import SectionEyebrow from '../components/SectionEyebrow.jsx';
 import ImagePlaceholder from '../components/ImagePlaceholder.jsx';
 import DestinyWheel from '../components/DestinyWheel.jsx';
 import LocationHeroImage from '../components/LocationHeroImage.jsx';
-// import {
-//   studio,
-//   featuredWork,
-//   newsFeatures,
-//   consultationSteps,
-//   consultationDeliverables,
-//   testimonials,
-//   milestones,
-//   testimonialsvideo
-// } from '../data/siteData.js';
+import SEO from '../components/SEO.jsx';
+import { buildLocalBusinessSchema } from '../data/schema.js';
 import {
   studio,
   newsFeatures,
@@ -315,17 +307,7 @@ export function FeaturedWorkSlider({ featuredWork }) {
   );
 }
 
-/**
- * Home now doubles as the layout for every location page.
- *
- *   <Home />                          → homepage, default animated hero
- *   <Home locationOverride={loc} />   → /locations/:slug, static image hero
- *                                        + that location highlighted below
- *
- * Every other section (Featured Work, Founder, News, Consultation,
- * Testimonials, CTA) renders identically either way — per the client's
- * request that the rest of the page stay the same.
- */
+
 export default function Home({ locationOverride }) {
   const activeSlug = locationOverride?.slug;
 const [featuredWork, setFeaturedWork] = useState([]);
@@ -333,7 +315,7 @@ const [featuredWork, setFeaturedWork] = useState([]);
   const [testimonialsvideo, setTestimonialsvideo] = useState([]);
 
   useEffect(() => {
-    // Featured portfolio images
+  
     api.get('/portfolio?featured=true')
       .then(({ data }) => {
         setFeaturedWork(
@@ -347,7 +329,7 @@ const [featuredWork, setFeaturedWork] = useState([]);
       })
       .catch((err) => console.error('Failed to load portfolio', err));
 
-    // Text reviews
+    
     api.get('/reviews')
       .then(({ data }) => {
         setTestimonials(
@@ -361,7 +343,7 @@ const [featuredWork, setFeaturedWork] = useState([]);
       })
       .catch((err) => console.error('Failed to load reviews', err));
 
-    // Video testimonials
+
     api.get('/testimonials')
       .then(({ data }) => {
         setTestimonialsvideo(
@@ -379,7 +361,13 @@ const [featuredWork, setFeaturedWork] = useState([]);
   return (
     <div>
 
-      {/* ── Hero ───────────────────────────────────────────── */}
+      <SEO title="9Ex Tattoo Studio"
+      description="India's First Destiny Tattoo Studio - Custom tattoos designed through personality, life goals, numerology, astrology and personal storytelling."
+      path="/"
+      jsonLd={buildLocalBusinessSchema()}
+       />
+
+
       {locationOverride ? (
         <LocationHeroImage location={locationOverride} />
       ) : (

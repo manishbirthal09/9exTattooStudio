@@ -5,7 +5,7 @@ import ImagePlaceholder from '../components/ImagePlaceholder.jsx';
 import Button from '../components/Button.jsx';
 import { galleryCategories } from '../data/siteData.js';
 import api from '../api/axios.js';
-
+import SEO from '../components/SEO.jsx';
 export default function Gallery() {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCategory = searchParams.get('category') || 'all';
@@ -75,6 +75,12 @@ const [galleryItems, setGalleryItems] = useState([]);
 
   return (
     <div className="container-site py-20">
+      <SEO title="Gallery"
+      description="Browse our portfolio of tattoo designs across various styles and categories."
+      path="/gallery"
+       />
+
+
       <SectionEyebrow>Gallery</SectionEyebrow>
       <h1 className="mt-4 font-display text-4xl md:text-5xl">Work, organised by style</h1>
       <p className="mt-4 max-w-xl text-paper/65 leading-relaxed">

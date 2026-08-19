@@ -6,7 +6,7 @@ import Button from '../components/Button.jsx';
 import DestinyWheel from '../components/DestinyWheel.jsx';
 import AppointmentForm from '../components/AppointmentForm.jsx';
 import { consultationSteps, consultationDeliverables, testimonials, newsFeatures } from '../data/siteData.js';
-
+import SEO from '../components/SEO.jsx';
 const benefits = [
   {
     icon: Sparkles,
@@ -33,6 +33,12 @@ const benefits = [
 export default function DestinyConsultation() {
   return (
     <div>
+      <SEO title="Destiny Tattoo Consultation"
+      description="Learn about our personalized destiny tattoo consultation process and how it can help you create a meaningful piece of art."
+      path="/destiny-consultation"
+       />
+
+
       <section className="relative overflow-hidden border-b border-paper-line/10 ink-texture">
         <div className="pointer-events-none absolute -right-40 -top-20 opacity-15 lg:opacity-25">
           <DestinyWheel size={460} />

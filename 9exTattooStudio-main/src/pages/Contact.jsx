@@ -3,10 +3,16 @@ import { Phone, MessageCircle, MapPin, Clock } from 'lucide-react';
 import SectionEyebrow from '../components/SectionEyebrow.jsx';
 import AppointmentForm from '../components/AppointmentForm.jsx';
 import { studio, studioLocations } from '../data/siteData.js';
-
+import SEO from '../components/SEO.jsx';
+import { buildLocalBusinessSchema } from '../data/schema.js';
 export default function Contact() {
   return (
     <div>
+      <SEO title="Contact Us"
+      description="Get in touch with 9Ex Tattoo Studio for appointments, inquiries, and more."
+      path="/contact"
+      jsonLd={buildLocalBusinessSchema()}
+       />
       <section className="container-site py-20">
         <SectionEyebrow>Contact Us</SectionEyebrow>
         <h1 className="mt-4 max-w-2xl font-display text-4xl md:text-5xl">

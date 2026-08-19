@@ -3,17 +3,17 @@ import SectionEyebrow from '../components/SectionEyebrow.jsx';
 import ImagePlaceholder from '../components/ImagePlaceholder.jsx';
 import Button from '../components/Button.jsx';
 import { studio, studioLocations, milestones,team } from '../data/siteData.js';
+import SEO from '../components/SEO.jsx';
 
-// const team = [
-//   { name: 'Shashikant Shelar', role: 'Founder & Lead Artist' },
-//   { name: 'Studio Artist', role: 'Realistic & Portrait Work' },
-//   { name: 'Studio Artist', role: 'Mandala & Fine Line' },
-//   { name: 'Consultant', role: 'Destiny Report & Numerology' },
-// ];
 
 export default function AboutUs() {
   return (
     <div>
+      <SEO
+      title="About Us"
+      description="Meet Shashikant Shelar, founder of 9Ex Tattoo Studio in Thane — creator of India's Destiny Tattoo concept."
+      path="/about"
+    />
       <section className="container-site py-20">
         <SectionEyebrow>About Us</SectionEyebrow>
         <h1 className="mt-4 max-w-2xl font-display text-4xl md:text-5xl">
@@ -102,14 +102,7 @@ export default function AboutUs() {
   <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
     {team.map((member) => (
       <div key={member.name + member.role}>
-        {/* <div className="aspect-square overflow-hidden bg-ink-soft">
-           <img
-            src={member.image}
-            alt={member.name || member.role}
-            loading="lazy"
-            className="h-full w-full object-cover"
-          /> 
-        </div> */}
+       
         {member.name && <p className="mt-3 font-display text-lg">{member.name}</p>}
         <p className="text-xs text-muted">{member.role}</p>
 

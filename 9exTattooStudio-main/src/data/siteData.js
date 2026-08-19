@@ -665,25 +665,25 @@ export const studioLocations = [
   {
     city: 'Thane',
     address: 'Studio address line, Thane, Maharashtra',
-    phone: '+91 98XXX XXXXX',
+    phone: '+91 7666678188',
     hours: '11:00 AM – 8:00 PM',
   },
   {
     city: 'Powai',
     address: 'Studio address line, Powai, Mumbai',
-    phone: '+91 98XXX XXXXX',
+    phone: '+91 7666678188',
     hours: '11:00 AM – 8:00 PM',
   },
   {
     city: 'Vashi',
     address: 'Studio address line, Vashi, Navi Mumbai',
-    phone: '+91 98XXX XXXXX',
+    phone: '+91 7666678188',
     hours: '11:00 AM – 8:00 PM',
   },
   {
     city: 'Bangalore',
     address: 'Studio address line, Bangalore, Karnataka',
-    phone: '+91 98XXX XXXXX',
+    phone: '+91 7666678188',
     hours: '11:00 AM – 8:00 PM',
   },
 ];

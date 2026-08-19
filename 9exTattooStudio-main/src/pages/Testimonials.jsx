@@ -3,7 +3,7 @@ import { Star,} from 'lucide-react';
 import SectionEyebrow from '../components/SectionEyebrow.jsx';
 import ImagePlaceholder from '../components/ImagePlaceholder.jsx';
 import { testimonials, testimonialsvideo, beforeAfter } from '../data/siteData.js';
-
+import SEO from '../components/SEO.jsx';
 const googleReviews = [
   
   {
@@ -43,11 +43,7 @@ const googleReviews = [
   },
 ];
 
-// const beforeAfter = [
-//   { title: 'Faded Tribal → Realistic Sleeve Cover-Up' },
-//   { title: 'Blank Forearm → Destiny Symbol Composition' },
-//   { title: 'Old Name Tattoo → Mandala Rework' },
-// ];
+
 import { useRef, useState } from 'react';
 import { Play, Volume2, VolumeX } from 'lucide-react';
 import Button from '../components/Button.jsx';
@@ -116,32 +112,18 @@ function TestimonialVideo({ t }) {
 export default function Testimonials() {
   return (
     <div>
+      <SEO title="Testimonials"
+      description="Read what our clients have to say about their experience at 9Ex Tattoo Studio."
+      path="/testimonials"
+       />
+
+
       <section className="container-site py-20">
         <SectionEyebrow>Testimonials</SectionEyebrow>
         <h1 className="mt-4 max-w-2xl font-display text-4xl md:text-5xl">What clients say</h1>
       </section>
 
-      {/* Video testimonials */}
-      {/* <section className="container-site pb-20">
-        <SectionEyebrow index="01">Video Testimonials</SectionEyebrow>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {testimonials.slice(0, 3).map((t) => (
-            <div key={t.name} className="relative">
-              <ImagePlaceholder label={`${t.name} — Video Testimonial`} ratio="aspect-video" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-brass text-ink">
-                  <Play size={18} fill="currentColor" />
-                </span>
-              </div>
-              <p className="mt-3 font-display text-base">{t.name}</p>
-              <p className="text-xs text-muted">{t.location}</p>
-            </div>
-          ))}
-        </div>
-      </section> */}
-
-      {/* Live client feedback */}
-      {/* Video testimonials */}
+      
 <section className="container-site pb-20">
   <SectionEyebrow index="01">Video Testimonials</SectionEyebrow>
   <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -150,24 +132,7 @@ export default function Testimonials() {
     ))}
   </div>
 </section>
-      {/* <section className="border-y border-paper-line/10 bg-ink-soft">
-        <div className="container-site py-20">
-          <SectionEyebrow index="02">Live Client Feedback</SectionEyebrow>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {testimonials.map((t) => (
-              <div key={t.name} className="border border-paper-line/10 p-7">
-                <p className="text-sm leading-relaxed text-paper/80">&ldquo;{t.quote}&rdquo;</p>
-                <p className="mt-5 font-display text-base">{t.name}</p>
-                <p className="text-xs text-muted">
-                  {t.location} · {t.type}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* Google reviews widget */}
+      
       <section className="container-site py-20">
         <SectionEyebrow index="03">Google Reviews</SectionEyebrow>
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -189,7 +154,7 @@ export default function Testimonials() {
         </div>
         </section>
 
-      {/* Before & After */}
+    
       <section className="border-y border-paper-line/10 bg-paper text-ink">
         <div className="container-site py-20">
           <SectionEyebrow index="04">
