@@ -1,4 +1,28 @@
-export const updateTestimonial = async (req, res) => {
+import cloudinary from '../config/cloudinary.js'; // apna actual cloudinary config path daal
+
+export const getUploadSignature = (req, res) => {
+  try {
+    const timestamp = Math.round(Date.now() / 1000);
+    const folder = req.body.folder || '9ex-tattoo/images';
+
+    const signature = cloudinary.utils.api_sign_request(
+      { timestamp, folder },
+      process.env.CLOUDINARY_API_SECRET
+    );
+
+    res.json({
+      signature,
+      timestamp,
+      cloudname: process.env.CLOUDINARY_CLOUD_NAME,
+      apikey: process.env.CLOUDINARY_API_KEY,
+      folder,
+    });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};  
+  
+  export const updateTestimonial = async (req, res) => {
   try {
     const item = await Testimonial.findById(req.params.id);
     if (!item) return res.status(404).json({ message: 'Not found' });
