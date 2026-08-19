@@ -27,7 +27,7 @@ const uploadVideoInChunks = (file, sig) => {
       formData.append('folder', sig.folder);
 
       const xhr = new XMLHttpRequest();
-      xhr.open('POST', `https://api.cloudinary.com/v1_1/${sig.cloudname}/video/upload`);
+      xhr.open('POST', `https://api.cloudinary.com/v1_1/${sig.cloudName}/video/upload`);
       xhr.setRequestHeader('X-Unique-Upload-Id', uploadId);
       xhr.setRequestHeader('Content-Range', `bytes ${start}-${end - 1}/${file.size}`);
 

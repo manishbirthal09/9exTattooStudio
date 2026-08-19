@@ -13,8 +13,8 @@ export const getUploadSignature = (req, res) => {
     res.json({
       signature,
       timestamp,
-      cloudname: process.env.CLOUDINARY_CLOUD_NAME,
-      apikey: process.env.CLOUDINARY_API_KEY,
+      cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+      apiKey: process.env.CLOUDINARY_API_KEY,
       folder,
     });
   } catch (err) {
