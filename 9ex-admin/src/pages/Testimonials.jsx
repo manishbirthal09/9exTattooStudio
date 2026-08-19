@@ -1,62 +1,62 @@
-import { useEffect, useState } from 'react';
-import { Plus, Pencil, Trash2, Video as VideoIcon } from 'lucide-react';
-import api from '../api/axios.js';
-import Modal from '../components/Modal.jsx';
-import ConfirmDialog from '../components/ConfirmDialog.jsx';
+// import { useEffect, useState } from 'react';
+// import { Plus, Pencil, Trash2, Video as VideoIcon } from 'lucide-react';
+// import api from '../api/axios.js';
+// import Modal from '../components/Modal.jsx';
+// import ConfirmDialog from '../components/ConfirmDialog.jsx';
 
-const emptyForm = { clientName: '', caption: '', published: true, order: 0 };
+// const emptyForm = { clientName: '', caption: '', published: true, order: 0 };
 
-export default function Testimonials() {
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [editing, setEditing] = useState(null);
-  const [form, setForm] = useState(emptyForm);
-  const [videoFile, setVideoFile] = useState(null);
-  const [thumbFile, setThumbFile] = useState(null);
-  const [saving, setSaving] = useState(false);
-  const [deleteTarget, setDeleteTarget] = useState(null);
-  const [deleting, setDeleting] = useState(false);
-  const [error, setError] = useState('');
+// export default function Testimonials() {
+//   const [items, setItems] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [modalOpen, setModalOpen] = useState(false);
+//   const [editing, setEditing] = useState(null);
+//   const [form, setForm] = useState(emptyForm);
+//   const [videoFile, setVideoFile] = useState(null);
+//   const [thumbFile, setThumbFile] = useState(null);
+//   const [saving, setSaving] = useState(false);
+//   const [deleteTarget, setDeleteTarget] = useState(null);
+//   const [deleting, setDeleting] = useState(false);
+//   const [error, setError] = useState('');
 
-  const load = async () => {
-    setLoading(true);
-    try {
-      const { data } = await api.get('/testimonials?all=true');
-      setItems(data);
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  };
+//   const load = async () => {
+//     setLoading(true);
+//     try {
+//       const { data } = await api.get('/testimonials?all=true');
+//       setItems(data);
+//     } catch (err) {
+//       console.error(err);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
 
-  useEffect(() => {
-    load();
-  }, []);
+//   useEffect(() => {
+//     load();
+//   }, []);
 
-  const openAdd = () => {
-    setEditing(null);
-    setForm(emptyForm);
-    setVideoFile(null);
-    setThumbFile(null);
-    setError('');
-    setModalOpen(true);
-  };
+//   const openAdd = () => {
+//     setEditing(null);
+//     setForm(emptyForm);
+//     setVideoFile(null);
+//     setThumbFile(null);
+//     setError('');
+//     setModalOpen(true);
+//   };
 
-  const openEdit = (item) => {
-    setEditing(item);
-    setForm({
-      clientName: item.clientName,
-      caption: item.caption || '',
-      published: item.published,
-      order: item.order,
-    });
-    setVideoFile(null);
-    setThumbFile(null);
-    setError('');
-    setModalOpen(true);
-  };
+//   const openEdit = (item) => {
+//     setEditing(item);
+//     setForm({
+//       clientName: item.clientName,
+//       caption: item.caption || '',
+//       published: item.published,
+//       order: item.order,
+//     });
+//     setVideoFile(null);
+//     setThumbFile(null);
+//     setError('');
+//     setModalOpen(true);
+//   };
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
