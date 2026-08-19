@@ -1,4 +1,4 @@
-import cloudinary from '../config/cloudinary.js'; // apna actual cloudinary config path daal
+import cloudinary from '../config/cloudinary.js'; 
 
 export const getUploadSignature = (req, res) => {
   try {
