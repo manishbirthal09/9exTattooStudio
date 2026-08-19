@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect , useState } from 'react';
 
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
@@ -27,6 +27,23 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 10000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-10 h-10 border-4 border-ink/20 border-t-ink rounded-full animate-spin" />
+          <p className="text-sm text-ink/50">Loading...</p>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="flex min-h-screen flex-col">
       <ScrollToTop />
