@@ -20,7 +20,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: [process.env.CLIENT_URL, process.env.ADMIN_URL].filter(Boolean),
+    origin: [process.env.CLIENT_URL, process.env.ADMIN_URL, 'https://www.9extattoo.com'].filter(Boolean),
     credentials: true,
   })
 );
