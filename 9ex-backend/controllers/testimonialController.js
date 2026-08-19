@@ -1,20 +1,7 @@
 import Testimonial from '../models/Testimonial.js';
 import cloudinary, { uploadBufferToCloudinary } from '../config/cloudinary.js';
 
-// Uploads an in-memory file buffer (from multer.memoryStorage) to Cloudinary
-// with the correct resource_type, since video and thumbnail need different
-// upload handling.
-// const uploadBufferToCloudinary = (file, { folder, resourceType }) =>
-//   new Promise((resolve, reject) => {
-//     const stream = cloudinary.uploader.upload_stream(
-//       { folder, resource_type: resourceType },
-//       (err, result) => {
-//         if (err) return reject(err);
-//         resolve(result);
-//       }
-//     );
-//     stream.end(file.buffer);
-//   });
+
 
 // GET /api/testimonials  (public — only published unless ?all=true)
 export const getTestimonials = async (req, res) => {
@@ -28,19 +15,14 @@ export const getTestimonials = async (req, res) => {
 };
 
 // POST /api/testimonials  (admin, multipart fields: "video" required, "thumbnail" optional)
-export const createTestimonial = async (req, res) => {
+ export const createTestimonial = async (req, res) => {
   try {
-    const videoFile = req.files?.video?.[0];
     const thumbFile = req.files?.thumbnail?.[0];
+    const { clientName, caption, published, order, videoUrl, videoPublicId } = req.body;
 
-    if (!videoFile) return res.status(400).json({ message: 'Video is required' });
-
-    const { clientName, caption, published, order } = req.body;
-
-    const videoResult = await uploadBufferToCloudinary(videoFile, {
-      folder: '9ex-tattoo/videos',
-      resourceType: 'video',
-    });
+    if (!videoUrl || !videoPublicId) {
+      return res.status(400).json({ message: 'Video is required' });
+    }
 
     let thumbnail;
     if (thumbFile) {
@@ -56,7 +38,7 @@ export const createTestimonial = async (req, res) => {
       caption,
       published: published === 'true' || published === true,
       order: order || 0,
-      video: { url: videoResult.secure_url, publicId: videoResult.public_id },
+      video: { url: videoUrl, publicId: videoPublicId },
       thumbnail,
     });
 
@@ -65,31 +47,68 @@ export const createTestimonial = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
-
 // PUT /api/testimonials/:id  (admin)
+// export const updateTestimonial = async (req, res) => {
+//   try {
+//     const item = await Testimonial.findById(req.params.id);
+//     if (!item) return res.status(404).json({ message: 'Not found' });
+
+//     const { clientName, caption, published, order } = req.body;
+//     if (clientName !== undefined) item.clientName = clientName;
+//     if (caption !== undefined) item.caption = caption;
+//     if (published !== undefined) item.published = published === 'true' || published === true;
+//     if (order !== undefined) item.order = order;
+
+//     const videoFile = req.files?.video?.[0];
+//     const thumbFile = req.files?.thumbnail?.[0];
+
+//     if (videoFile) {
+//       if (item.video?.publicId) {
+//         await cloudinary.uploader.destroy(item.video.publicId, { resource_type: 'video' });
+//       }
+//       const videoResult = await uploadBufferToCloudinary(videoFile, {
+//         folder: '9ex-tattoo/videos',
+//         resourceType: 'video',
+//       });
+//       item.video = { url: videoResult.secure_url, publicId: videoResult.public_id };
+//     }
+
+//     if (thumbFile) {
+//       if (item.thumbnail?.publicId) {
+//         await cloudinary.uploader.destroy(item.thumbnail.publicId, { resource_type: 'image' });
+//       }
+//       const thumbResult = await uploadBufferToCloudinary(thumbFile, {
+//         folder: '9ex-tattoo/images',
+//         resourceType: 'image',
+//       });
+//       item.thumbnail = { url: thumbResult.secure_url, publicId: thumbResult.public_id };
+//     }
+
+//     await item.save();
+//     res.json(item);
+//   } catch (err) {
+//     res.status(500).json({ message: err.message });
+//   }
+// };
+
 export const updateTestimonial = async (req, res) => {
   try {
     const item = await Testimonial.findById(req.params.id);
     if (!item) return res.status(404).json({ message: 'Not found' });
 
-    const { clientName, caption, published, order } = req.body;
+    const { clientName, caption, published, order, videoUrl, videoPublicId } = req.body;
     if (clientName !== undefined) item.clientName = clientName;
     if (caption !== undefined) item.caption = caption;
     if (published !== undefined) item.published = published === 'true' || published === true;
     if (order !== undefined) item.order = order;
 
-    const videoFile = req.files?.video?.[0];
     const thumbFile = req.files?.thumbnail?.[0];
 
-    if (videoFile) {
+    if (videoUrl && videoPublicId) {
       if (item.video?.publicId) {
         await cloudinary.uploader.destroy(item.video.publicId, { resource_type: 'video' });
       }
-      const videoResult = await uploadBufferToCloudinary(videoFile, {
-        folder: '9ex-tattoo/videos',
-        resourceType: 'video',
-      });
-      item.video = { url: videoResult.secure_url, publicId: videoResult.public_id };
+      item.video = { url: videoUrl, publicId: videoPublicId };
     }
 
     if (thumbFile) {

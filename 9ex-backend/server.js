@@ -11,6 +11,7 @@ import blogRoutes from './routes/blogRoutes.js';
 import testimonialRoutes from './routes/testimonialRoutes.js';
 import reviewRoutes from './routes/reviewRoutes.js';
 
+import uploadRoutes from './routes/upload.js';
 
 connectDB();
 console.log('CLIENT_URL:', process.env.CLIENT_URL);
@@ -35,6 +36,7 @@ app.use('/api/portfolio', portfolioRoutes);
 app.use('/api/blogs', blogRoutes);
 app.use('/api/testimonials', testimonialRoutes);
 app.use('/api/reviews', reviewRoutes);
+app.use('/api/upload', uploadRoutes);
 
 // 404 handler
 app.use((req, res) => {

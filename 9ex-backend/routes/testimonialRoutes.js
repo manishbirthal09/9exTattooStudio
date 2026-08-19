@@ -11,7 +11,7 @@ import { uploadTestimonial } from '../middleware/upload.js';
 const router = express.Router();
 
 const fields = uploadTestimonial.fields([
-  { name: 'video', maxCount: 1 },
+  
   { name: 'thumbnail', maxCount: 1 },
 ]);
 
